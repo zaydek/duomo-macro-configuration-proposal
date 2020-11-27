@@ -1,11 +1,15 @@
 @use "sass:map";
 
 @use "core/width";
+
+@use "configuration";
+@use "escapers";
 @use "getters";
 @use "resolvers";
 
-// TODO: Add `$headless` option here?
 @mixin build($options) {
+	$breakpoint-delimiter: escapers.escape(configuration.$breakpoint-delimiter);
+
 	$shorthand: map.get($options, shorthand);
 	$property: map.get($options, property);
 	$type: map.get($options, type);
@@ -26,8 +30,7 @@
 			.#{$k} {
 				@if $type == range {
 					@each $rv in $range {
-						// TODO: Change `\:`.
-						&\:#{$shorthand}-#{$rv} {
+						&#{$breakpoint-delimiter}#{$shorthand}-#{$rv} {
 							#{$property}: resolvers.resolve($rv, $resolver);
 						}
 					}
@@ -37,6 +40,7 @@
 	}
 }
 
+// TODO: Add `$headless` option here?
 @at-root {
 	@include build(width.$options);
 }

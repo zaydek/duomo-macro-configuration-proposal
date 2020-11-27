@@ -10,6 +10,8 @@ $debugger: true !default;
 // Describes whether to generate stagger utilities.
 $stagger: true !default;
 
+$breakpoint-delimiter: ":";
+
 // prettier-ignore
 $breakpoint-map: (
 	xs:   512, // 32 * 16
