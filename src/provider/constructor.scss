@@ -44,6 +44,7 @@
 	@include constructor(core.$padding-opts);
 	@include constructor(core.$width-opts);
 	@include constructor(core.$height-opts);
+	@include constructor(core.$z-index-opts);
 }
 
 @at-root {
