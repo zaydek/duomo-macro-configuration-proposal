@@ -1,16 +1,52 @@
+@use "sass:list";
 @use "sass:string";
 
-// Ex: has-suffix(8px, px) -> true
+// Ex:
+//
+// has-suffix(8, px)   -> false
+// has-suffix(8px, px) -> true
+//
 @function has-suffix($str, $end) {
 	$str: "" + $str;
 	$end: "" + $end;
 	@return string.slice($str, 1 + string.length($str) - string.length($end)) == $end;
 }
 
-// Ex: trim-suffix(8px, px) -> "8"
-@function trim-suffix($str, $end) {
-	$str: "" + $str;
-	$end: "" + $end;
-	// TODO: Should `unquote`?
-	@return string.slice($str, 0, string.length($str) - string.length($end));
+// // Ex:
+// //
+// // trim-suffix(8, px)   -> "8" (UNTESTED)
+// // trim-suffix(8px, px) -> "8"
+// //
+// @function trim-suffix($str, $end) {
+// 	$str: "" + $str;
+// 	$end: "" + $end;
+// 	// TODO: Should `unquote`?
+// 	@return string.slice($str, 0, string.length($str) - string.length($end));
+// }
+
+// Ex:
+//
+// sum-list(1, 2)      -> (1, 2)
+// sum-list((1, 2), 3) -> (1, 2, 3)
+//
+// NOTE: `list.join` does not support variadic arguments.
+@function sum-list($lists...) {
+	// $sum-list: ();
+	// @each $list in $lists {
+	// 	$sum-list: list.join($sum-list, $list);
+	// }
+	// @return $sum-list;
+
+	$sum-list: ();
+	@each $list in $lists {
+		@if type-of($list) != "list" {
+			$any: $list;
+			$sum-list: list.join($sum-list, $any);
+		} @else {
+			@each $any in $list {
+				$sum-list: list.join($sum-list, $any);
+			}
+		}
+	}
+	@return $sum-list;
 }

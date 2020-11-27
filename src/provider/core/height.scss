@@ -1,16 +1,15 @@
-@use "sass:list";
-
 @use "../getters";
+@use "../utils";
 
 // prettier-ignore
 $opts: (
 	shorthand: h,
 	property: height,
 	type: range,
-	// TODO: add `100%`.
-	// TODO: add `100vh`.
-	range: list.join(getters.nrange(), getters.range()),
+	range: utils.sum-list(
+		getters.range()
+		100%,
+		100vh,
+	),
 	resolver: rem,
-	// breakpoints: breakpoints(),
-	// pseudos: none,
 );

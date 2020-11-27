@@ -34,7 +34,7 @@
 @function name($any) {
 	@if $any == 100% {
 		@return "max";
-	} @else if $any == 100vw or $any == 100vw {
+	} @else if $any == 100vw or $any == 100vh {
 		@return "screen";
 	}
 	@return $any;

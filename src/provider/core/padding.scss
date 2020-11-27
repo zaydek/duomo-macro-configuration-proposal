@@ -1,14 +1,10 @@
-@use "sass:list";
-
 @use "../getters";
+@use "../utils";
 
-// prettier-ignore
 $opts: (
 	shorthand: p,
 	property: padding,
 	type: range,
-	range: list.join(getters.nrange(), getters.range()),
+	range: getters.range(),
 	resolver: rem,
-	// breakpoints: breakpoints(),
-	// pseudos: none,
 );

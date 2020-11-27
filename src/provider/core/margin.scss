@@ -1,14 +1,12 @@
-@use "sass:list";
-
 @use "../getters";
+@use "../utils";
 
-// prettier-ignore
 $opts: (
 	shorthand: m,
 	property: margin,
 	type: range,
-	range: list.join(getters.nrange(), getters.range()),
+	range: utils.sum-list(getters.nrange(), getters.range()),
 	resolver: rem,
 	// breakpoints: breakpoints(),
-	// pseudos: none,
+	// pseudos: none,,,,
 );
