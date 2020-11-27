@@ -1,0 +1,26 @@
+@use "sass:map";
+
+@use "core/width";
+
+// TODO: Add `$headless` option here?
+@mixin build($options) {
+	$shorthand: map.get($options, shorthand);
+	$property: map.get($options, property);
+	$type: map.get($options, type);
+	$range: map.get($options, range);
+	$resolver: map.get($options, resolver);
+	$breakpoints: map.get($options, breakpoints);
+	$pseudo: map.get($options, pseudo);
+
+	@if $type == range {
+		@each $rv in $range {
+			.#{$shorthand}-#{$rv} {
+				#{$property}: $rv;
+			}
+		}
+	}
+}
+
+@at-root {
+	@include build(width.$options);
+}

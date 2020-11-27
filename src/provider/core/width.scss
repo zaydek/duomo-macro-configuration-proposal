@@ -1,0 +1,21 @@
+@use "../getters" as getters;
+
+// prettier-ignore
+$options: (
+	// TODO: Add support for `exempt` or `none`.
+	shorthand: w,
+	property: width,
+	type: range,
+	range: (
+		0,
+		1,
+		2,
+		4,
+		8,
+	),
+	// TODO: Add support for `exempt` or `none`.
+	resolver: rem,
+	// TODO: Add support (sm, md) etc.
+	breakpoints: breakpoints(), // Does this work?
+	pseudo: none,
+);

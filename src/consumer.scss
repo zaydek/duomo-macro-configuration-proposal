@@ -1,7 +1,7 @@
-@use "provider" as *;
+@use "provider" as duomo;
 
-@each $k, $v in breakpoints() {
-	.#{$k} {
-		width: #{$v + px};
-	}
-}
+// @each $k, $v in duomo.breakpoints() {
+// 	.#{$k} {
+// 		width: #{$v + px};
+// 	}
+// }

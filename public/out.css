@@ -1,23 +1,19 @@
-.xs {
-  width: 512px;
+.w-0 {
+  width: 0;
 }
 
-.sm {
-  width: 640px;
+.w-1 {
+  width: 1;
 }
 
-.md {
-  width: 768px;
+.w-2 {
+  width: 2;
 }
 
-.lg {
-  width: 1024px;
+.w-4 {
+  width: 4;
 }
 
-.xl {
-  width: 1280px;
-}
-
-.\2 xl {
-  width: 1536px;
+.w-8 {
+  width: 8;
 }

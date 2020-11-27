@@ -10,8 +10,6 @@ $debugger: true !default;
 // Describes whether to generate stagger utilities.
 $stagger: true !default;
 
-// TODO: Escape `2xl`?
-//
 // prettier-ignore
 $breakpoint-map: (
 	xs:   512, // 32 * 16
