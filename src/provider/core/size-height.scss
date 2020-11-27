@@ -7,6 +7,7 @@ $opts: (
 	property: height,
 	type: range,
 	range: utils.var-join(
+		auto,
 		getters.range()
 		100%,
 		100vh,

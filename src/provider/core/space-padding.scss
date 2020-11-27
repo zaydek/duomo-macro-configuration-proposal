@@ -1,0 +1,55 @@
+@use "../getters";
+@use "../utils";
+
+// prettier-ignore
+$opts: (
+	(
+		shorthand: p,
+		property: padding,
+		type: range,
+		range: getters.range(),
+		resolver: rem,
+	),
+	(
+		shorthand: px,
+		property: (padding-left, padding-right),
+		type: range,
+		range: getters.range(),
+		resolver: rem,
+	),
+	(
+		shorthand: py,
+		property: (padding-top, padding-bottom),
+		type: range,
+		range: getters.range(),
+		resolver: rem,
+	),
+	(
+		shorthand: pt,
+		property: padding-top,
+		type: range,
+		range: getters.range(),
+		resolver: rem,
+	),
+	(
+		shorthand: pr,
+		property: padding-right,
+		type: range,
+		range: getters.range(),
+		resolver: rem,
+	),
+	(
+		shorthand: pb,
+		property: padding-bottom,
+		type: range,
+		range: getters.range(),
+		resolver: rem,
+	),
+	(
+		shorthand: pl,
+		property: padding-left,
+		type: range,
+		range: getters.range(),
+		resolver: rem,
+	),
+);

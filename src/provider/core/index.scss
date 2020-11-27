@@ -1,7 +1,7 @@
-@forward "height" as height-*;
-@forward "margin" as margin-*;
-@forward "padding" as padding-*;
-@forward "width" as width-*;
+@forward "size-height" as height-*;
+@forward "size-width" as width-*;
+@forward "space-margin" as margin-*;
+@forward "space-padding" as padding-*;
 
 // TODO: Add support for `exempt` or `none`.
 // TODO: Add support for `nrange`.
