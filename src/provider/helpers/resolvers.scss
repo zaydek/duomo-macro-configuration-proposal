@@ -41,7 +41,8 @@
 		$any == auto or
 		utils.has-suffix($any, "%") or
 		utils.has-suffix($any, "vw") or
-		utils.has-suffix($any, "vh");
+		utils.has-suffix($any, "vh") or
+		$any == 9999px;
 	@return $ret;
 }
 

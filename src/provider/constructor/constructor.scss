@@ -1,6 +1,5 @@
 @use "sass:list";
 @use "sass:map";
-@use "sass:math";
 
 @use "../helpers" as *;
 
@@ -19,23 +18,10 @@
 // (0, 0.5, 1)  -> true
 // (0, 50, 100) -> false
 //
-@function conv-percent($type, $range) {
+@function percent-heuristic($type, $range) {
 	$ok: $type == range and type-of(list.nth($range, 1)) == "number" and list.nth($range, 1) >= 0 and
 		type-of(list.nth($range, -1)) == "number" and list.nth($range, -1) <= 1;
 	@return $ok;
-}
-
-// Ex:
-//
-// abs("Hello, world!") -> "Hello, world!"
-// abs(-42)             -> 42
-// abs(42)              -> 42
-//
-@function abs($any) {
-	@if type-of($any) == "number" {
-		@return math.abs($any);
-	}
-	@return $any;
 }
 
 @mixin constructor($opts) {
@@ -54,7 +40,7 @@
 		$variants: map.get($opt, variants);
 
 		// Computed:
-		$percent: conv-percent($type, $range);
+		$percent: percent-heuristic($type, $range);
 
 		@if $type == range {
 			@each $rv in $range {
@@ -64,7 +50,6 @@
 					}
 				}
 			}
-
 			// (hover)
 			@if list.index($variants, hover) {
 				@each $rv in $range {
@@ -82,7 +67,6 @@
 					}
 				}
 			}
-
 			// (focus)
 			@if list.index($variants, focus) {
 				@each $rv in $range {
@@ -100,7 +84,6 @@
 					}
 				}
 			}
-
 			// (responsive)
 			@if list.index($variants, responsive) {
 				@each $key, $n in breakpoints() {
