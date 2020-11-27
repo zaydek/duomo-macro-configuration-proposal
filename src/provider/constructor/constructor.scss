@@ -1,10 +1,10 @@
 @use "sass:map";
 @use "sass:math";
 
-@use "getters" as *;
-@use "resolvers" as *;
+@use "../getters" as *;
+@use "../resolvers" as *;
 
-@function iterable($opts) {
+@function iterate($opts) {
 	// prettier-ignore
 	$ret: if(
 		type-of($opts) == "map",
@@ -15,12 +15,13 @@
 }
 
 @mixin constructor($opts) {
-	@each $opt in iterable($opts) {
-		$shorthand: map.get($opt, shorthand);
-		// TODO
-		@if $shorthand == none {
-			$shorthand: map.get($opt, property);
-		}
+	@each $opt in iterate($opts) {
+		// prettier-ignore
+		$shorthand: if(
+			map.get($opt, shorthand) == none,
+			map.get($opt, property),
+			map.get($opt, shorthand),
+		);
 		$property: map.get($opt, property);
 		$type: map.get($opt, type);
 		$range: map.get($opt, range);
@@ -28,6 +29,7 @@
 		$breakpoints: map.get($opt, breakpoints);
 		$pseudos: map.get($opt, pseudos);
 
+		// TODO
 		@if $type == range {
 			@each $rv in $range {
 				#{amp()}#{n($rv)}#{$shorthand}-#{ident(if(type-of($rv) != "number", $rv, math.abs($rv)))} {

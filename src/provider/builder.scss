@@ -6,7 +6,10 @@
 
 @mixin props {
 	@include core.margin;
-	// ...
+	@include core.padding;
+	@include core.width;
+	@include core.height;
+	@include core.z-index;
 }
 
 @at-root {

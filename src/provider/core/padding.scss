@@ -1,8 +1,10 @@
-@use "../../getters";
-@use "../../utils";
+@use "../constructor" as *;
+
+@use "../getters";
+@use "../utils";
 
 // prettier-ignore
-$opts: (
+$__opts: (
 	(
 		shorthand: p,
 		property: padding,
@@ -53,3 +55,7 @@ $opts: (
 		resolver: rem,
 	),
 );
+
+@mixin padding {
+	@include constructor($__opts);
+}
