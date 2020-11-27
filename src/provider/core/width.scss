@@ -1,22 +1,16 @@
+@use "sass:list";
+
+@use "../getters";
+
 // prettier-ignore
 $opts: (
 	shorthand: w,
 	property: width,
 	type: range,
-	range: (
-		-1,
-		-2,
-		-4,
-		-8,
-		 0,
-		 1,
-		 2,
-		 4,
-		 8,
-		 100%,
-		 100vw,
-	),
+	// TODO: add `100%`.
+	// TODO: add `100vw`.
+	range: list.join(getters.nrange(), getters.range()),
 	resolver: rem,
-	breakpoints: breakpoints(),
-	pseudos: none,
+	// breakpoints: breakpoints(),
+	// pseudos: none,
 );
