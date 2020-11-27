@@ -142,25 +142,25 @@
   }
 }
 @media (min-width: 1536px) {
-  .\2 xl\:w-0 {
+  .\32 xl\:w-0 {
     width: 0;
   }
-  .\2 xl\:w-1 {
+  .\32 xl\:w-1 {
     width: 0.0625rem;
   }
-  .\2 xl\:w-2 {
+  .\32 xl\:w-2 {
     width: 0.125rem;
   }
-  .\2 xl\:w-4 {
+  .\32 xl\:w-4 {
     width: 0.25rem;
   }
-  .\2 xl\:w-8 {
+  .\32 xl\:w-8 {
     width: 0.5rem;
   }
-  .\2 xl\:w-max {
+  .\32 xl\:w-max {
     width: 100%;
   }
-  .\2 xl\:w-screen {
+  .\32 xl\:w-screen {
     width: 100vw;
   }
 }
