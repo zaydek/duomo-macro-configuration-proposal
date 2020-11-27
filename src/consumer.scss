@@ -1,0 +1,7 @@
+@use "provider" as *;
+
+@each $k, $v in breakpoints() {
+	.#{$k} {
+		width: #{$v + px};
+	}
+}

@@ -1,0 +1,7 @@
+{
+  "name": "duomo-macro-configuration-proposal",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.29.0"
+  }
+}

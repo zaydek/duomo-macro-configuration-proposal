@@ -1,0 +1,23 @@
+// Describes whether to generate Duomo.
+$headless: false !default;
+
+// Describes whether to generate Duomo variables.
+$headless-root: false !default;
+
+// Describes whether to generate debugger utilities.
+$debugger: true !default;
+
+// Describes whether to generate stagger utilities.
+$stagger: true !default;
+
+// TODO: Escape `2xl`?
+//
+// prettier-ignore
+$breakpoint-map: (
+	xs:   512, // 32 * 16
+	sm:   640, // 32 * 20
+	md:   768, // 32 * 24
+	lg:  1024, // 32 * 32
+	xl:  1280, // 32 * 40
+	2xl: 1536, // 32 * 48
+);

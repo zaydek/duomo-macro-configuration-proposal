@@ -1,0 +1,22 @@
+@use "sass:map";
+
+@use "configuration" as *;
+@use "escapers" as *;
+
+// One-off getter.
+@function breakpoint($key) {
+	$got: map.get($breakpoint-map, $key);
+	@if not $got {
+		@error "breakpoints: no such key; key=#{$key}";
+	}
+	@return $got;
+}
+
+// Getter.
+@function breakpoints() {
+	$safe-map: ();
+	@each $k, $v in $breakpoint-map {
+		$safe-map: map.set($safe-map, escape-breakpoint-key($k), $v);
+	}
+	@return $safe-map;
+}
