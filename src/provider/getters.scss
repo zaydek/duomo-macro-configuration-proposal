@@ -3,6 +3,10 @@
 @use "configuration";
 @use "escapers";
 
+@function delimiter() {
+	@return escapers.escape(configuration.$delimiter);
+}
+
 // TODO: Should this be configurable?
 @function semantic($v) {
 	@if $v == 100% {
