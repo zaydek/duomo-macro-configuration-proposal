@@ -1,0 +1,15 @@
+@use "../constructor" as *;
+@use "../helpers" as *;
+
+@mixin display {
+	.block {
+		display: block;
+	}
+	@each $key, $n in breakpoints() {
+		@media (min-width: px($n)) {
+			.#{delimit($key)}block {
+				display: block;
+			}
+		}
+	}
+}

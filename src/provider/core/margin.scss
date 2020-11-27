@@ -8,8 +8,8 @@ $__opts: (
 		property: margin,
 		type: range,
 		range: var-join(
-			auto,
 			nrange(),
+			auto,
 			range(),
 		),
 		resolver: rem,
@@ -20,8 +20,8 @@ $__opts: (
 		property: (margin-left, margin-right),
 		type: range,
 		range: var-join(
-			auto,
 			nrange(),
+			auto,
 			range(),
 		),
 		resolver: rem,
@@ -32,8 +32,8 @@ $__opts: (
 		property: (margin-top, margin-bottom),
 		type: range,
 		range: var-join(
-			auto,
 			nrange(),
+			auto,
 			range(),
 		),
 		resolver: rem,
@@ -44,8 +44,8 @@ $__opts: (
 		property: margin-top,
 		type: range,
 		range: var-join(
-			auto,
 			nrange(),
+			auto,
 			range(),
 		),
 		resolver: rem,
@@ -56,8 +56,8 @@ $__opts: (
 		property: margin-right,
 		type: range,
 		range: var-join(
-			auto,
 			nrange(),
+			auto,
 			range(),
 		),
 		resolver: rem,
@@ -68,8 +68,8 @@ $__opts: (
 		property: margin-bottom,
 		type: range,
 		range: var-join(
-			auto,
 			nrange(),
+			auto,
 			range(),
 		),
 		resolver: rem,
@@ -80,8 +80,8 @@ $__opts: (
 		property: margin-left,
 		type: range,
 		range: var-join(
-			auto,
 			nrange(),
+			auto,
 			range(),
 		),
 		resolver: rem,

@@ -28,6 +28,11 @@
 // 	@return & + delimiter();
 // }
 
+// Ex: delimit(sm) -> "sm\:"
+@function delimit($key) {
+	@return $key + escapers.escape(configuration.$delimiter);
+}
+
 // Ex: delimiter() -> "\:"
 @function delimiter() {
 	@return escapers.escape(configuration.$delimiter);
