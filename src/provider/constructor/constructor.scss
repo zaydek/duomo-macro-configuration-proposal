@@ -4,7 +4,7 @@
 
 @use "../helpers" as *;
 
-@function to-array($opts) {
+@function to-list($opts) {
 	// prettier-ignore
 	$ret: if(
 		type-of($opts) == "map",
@@ -14,12 +14,23 @@
 	@return $ret;
 }
 
+// Ex:
+//
+// (0, 0.5, 1)  -> true
+// (0, 50, 100) -> false
+//
 @function conv-percent($type, $range) {
 	$ok: $type == range and type-of(list.nth($range, 1)) == "number" and list.nth($range, 1) >= 0 and
 		type-of(list.nth($range, -1)) == "number" and list.nth($range, -1) <= 1;
 	@return $ok;
 }
 
+// Ex:
+//
+// abs("Hello, world!") -> "Hello, world!"
+// abs(-42)             -> 42
+// abs(42)              -> 42
+//
 @function abs($any) {
 	@if type-of($any) == "number" {
 		@return math.abs($any);
@@ -28,7 +39,7 @@
 }
 
 @mixin constructor($opts) {
-	@each $opt in to-array($opts) {
+	@each $opt in to-list($opts) {
 		// prettier-ignore
 		$shorthand: if(
 			map.get($opt, shorthand) == none,
