@@ -1,0 +1,7 @@
+@forward "margin" as margin-*;
+@forward "padding" as padding-*;
+@forward "width" as width-*;
+
+// TODO: Add support for `exempt` or `none`.
+// TODO: Add support for `nrange`.
+// FIXME: `breakpoints` per property are not being interpolated.

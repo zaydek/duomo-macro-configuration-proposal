@@ -1,7 +1,7 @@
 // prettier-ignore
 $opts: (
-	shorthand: w,
-	property: width,
+	shorthand: p,
+	property: padding,
 	type: range,
 	range: (
 		-1,
@@ -13,8 +13,6 @@ $opts: (
 		 2,
 		 4,
 		 8,
-		 100%,
-		 100vw,
 	),
 	resolver: rem,
 	breakpoints: breakpoints(),

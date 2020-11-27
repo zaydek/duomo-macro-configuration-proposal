@@ -3,18 +3,18 @@
 
 @use "getters" as *;
 @use "resolvers" as *;
+
 @use "configuration";
+@use "core";
 
-@use "core/width";
-
-@mixin build($options) {
-	$shorthand: map.get($options, shorthand);
-	$property: map.get($options, property);
-	$type: map.get($options, type);
-	$range: map.get($options, range);
-	$resolver: map.get($options, resolver);
-	$breakpoints: map.get($options, breakpoints);
-	$pseudos: map.get($options, pseudos);
+@mixin build($opts) {
+	$shorthand: map.get($opts, shorthand);
+	$property: map.get($opts, property);
+	$type: map.get($opts, type);
+	$range: map.get($opts, range);
+	$resolver: map.get($opts, resolver);
+	$breakpoints: map.get($opts, breakpoints);
+	$pseudos: map.get($opts, pseudos);
 
 	@if $type == range {
 		@each $rv in $range {
@@ -25,14 +25,20 @@
 	}
 }
 
+@mixin props {
+	@include build(core.$margin-opts);
+	@include build(core.$padding-opts);
+	@include build(core.$width-opts);
+}
+
 @at-root {
 	@if configuration.$headless == false {
-		@include build(width.$options);
+		@include props;
 		@each $key, $n in breakpoints() {
 			@media (min-width: px($n)) {
 				.#{$key} {
 					@at-root {
-						@include build(width.$options);
+						@include props;
 					}
 				}
 			}
