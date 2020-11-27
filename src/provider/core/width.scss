@@ -1,16 +1,14 @@
 @use "../constructor" as *;
-
-@use "../getters";
-@use "../utils";
+@use "../helpers" as *;
 
 // prettier-ignore
 $__opts: (
 	shorthand: w,
 	property: width,
 	type: range,
-	range: utils.var-join(
+	range: var-join(
 		auto,
-		getters.range()
+		range()
 		100%,
 		100vw,
 	),

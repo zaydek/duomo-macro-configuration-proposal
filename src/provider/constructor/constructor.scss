@@ -1,8 +1,7 @@
 @use "sass:map";
 @use "sass:math";
 
-@use "../getters" as *;
-@use "../resolvers" as *;
+@use "../helpers" as *;
 
 @function iterate($opts) {
 	// prettier-ignore

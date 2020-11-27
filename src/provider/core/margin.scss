@@ -1,7 +1,5 @@
 @use "../constructor" as *;
-
-@use "../getters";
-@use "../utils";
+@use "../helpers" as *;
 
 // prettier-ignore
 $__opts: (
@@ -9,10 +7,10 @@ $__opts: (
 		shorthand: m,
 		property: margin,
 		type: range,
-		range: utils.var-join(
+		range: var-join(
 			auto,
-			getters.nrange(),
-			getters.range(),
+			nrange(),
+			range(),
 		),
 		resolver: rem,
 	),
@@ -20,10 +18,10 @@ $__opts: (
 		shorthand: mx,
 		property: (margin-left, margin-right),
 		type: range,
-		range: utils.var-join(
+		range: var-join(
 			auto,
-			getters.nrange(),
-			getters.range(),
+			nrange(),
+			range(),
 		),
 		resolver: rem,
 	),
@@ -31,10 +29,10 @@ $__opts: (
 		shorthand: my,
 		property: (margin-top, margin-bottom),
 		type: range,
-		range: utils.var-join(
+		range: var-join(
 			auto,
-			getters.nrange(),
-			getters.range(),
+			nrange(),
+			range(),
 		),
 		resolver: rem,
 	),
@@ -42,10 +40,10 @@ $__opts: (
 		shorthand: mt,
 		property: margin-top,
 		type: range,
-		range: utils.var-join(
+		range: var-join(
 			auto,
-			getters.nrange(),
-			getters.range(),
+			nrange(),
+			range(),
 		),
 		resolver: rem,
 	),
@@ -53,10 +51,10 @@ $__opts: (
 		shorthand: mr,
 		property: margin-right,
 		type: range,
-		range: utils.var-join(
+		range: var-join(
 			auto,
-			getters.nrange(),
-			getters.range(),
+			nrange(),
+			range(),
 		),
 		resolver: rem,
 	),
@@ -64,10 +62,10 @@ $__opts: (
 		shorthand: mb,
 		property: margin-bottom,
 		type: range,
-		range: utils.var-join(
+		range: var-join(
 			auto,
-			getters.nrange(),
-			getters.range(),
+			nrange(),
+			range(),
 		),
 		resolver: rem,
 	),
@@ -75,10 +73,10 @@ $__opts: (
 		shorthand: ml,
 		property: margin-left,
 		type: range,
-		range: utils.var-join(
+		range: var-join(
 			auto,
-			getters.nrange(),
-			getters.range(),
+			nrange(),
+			range(),
 		),
 		resolver: rem,
 	),

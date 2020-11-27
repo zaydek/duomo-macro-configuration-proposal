@@ -1,7 +1,5 @@
 @use "../constructor" as *;
-
-@use "../getters";
-@use "../utils";
+@use "../helpers";
 
 // prettier-ignore
 $__opts: (

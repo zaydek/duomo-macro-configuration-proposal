@@ -12,18 +12,6 @@
 	@return string.slice($str, 1 + string.length($str) - string.length($end)) == $end;
 }
 
-// // Ex:
-// //
-// // trim-suffix(8, px)   -> "8" (UNTESTED)
-// // trim-suffix(8px, px) -> "8"
-// //
-// @function trim-suffix($str, $end) {
-// 	$str: "" + $str;
-// 	$end: "" + $end;
-// 	// TODO: Should `unquote`?
-// 	@return string.slice($str, 0, string.length($str) - string.length($end));
-// }
-
 // Ex:
 //
 // var-join(1, 2)      -> (1, 2)
