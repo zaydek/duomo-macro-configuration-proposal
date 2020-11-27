@@ -1,5 +1,7 @@
 @use "sass:math";
 
+@use "utils";
+
 @function rem($v) {
 	@if type-of($v) != "number" {
 		@return $v;
@@ -34,6 +36,11 @@
 }
 
 @function resolve($v, $resolver) {
+	// TODO
+	@if utils.has-suffix($v, "%") or utils.has-suffix($v, "vw") or utils.has-suffix($v, "vh") {
+		@return $v;
+	}
+
 	@if $resolver != none and $resolver != rem and $resolver != em and $resolver != px {
 		@error "resolve: cannot resolve a non-rem, em, px, or none resolver type";
 	}

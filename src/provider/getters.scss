@@ -1,11 +1,11 @@
 @use "sass:map";
 
-@use "configuration" as *;
-@use "escapers" as *;
+@use "configuration";
+@use "escapers";
 
 // One-off getter.
 @function breakpoint($key) {
-	$got: map.get($breakpoint-map, $key);
+	$got: map.get(configuration.$breakpoint-map, $key);
 	@if not $got {
 		@error "breakpoints: no such key; key=#{$key}";
 	}
@@ -15,8 +15,18 @@
 // Getter.
 @function breakpoints() {
 	$safe-map: ();
-	@each $k, $v in $breakpoint-map {
-		$safe-map: map.set($safe-map, escape-breakpoint-key($k), $v);
+	@each $k, $v in configuration.$breakpoint-map {
+		$safe-map: map.set($safe-map, escapers.escape-breakpoint-key($k), $v);
 	}
 	@return $safe-map;
+}
+
+// TODO: Should this be configurable?
+@function semantic($v) {
+	@if $v == 100% {
+		@return "max";
+	} @else if $v == 100vw or $v == 100vw {
+		@return "screen";
+	}
+	@return $v;
 }

@@ -20,8 +20,8 @@
 
 	@if $type == range {
 		@each $rv in $range {
-			.#{$shorthand}-#{$rv} {
-				#{$property}: $rv;
+			.#{$shorthand}-#{getters.semantic($rv)} {
+				#{$property}: resolvers.resolve($rv, $resolver);
 			}
 		}
 	}
@@ -30,7 +30,8 @@
 			.#{$k} {
 				@if $type == range {
 					@each $rv in $range {
-						&#{$breakpoint-delimiter}#{$shorthand}-#{$rv} {
+						// TODO: Add support for semantic `$rv`s.
+						&#{$breakpoint-delimiter}#{$shorthand}-#{getters.semantic($rv)} {
 							#{$property}: resolvers.resolve($rv, $resolver);
 						}
 					}
@@ -40,7 +41,8 @@
 	}
 }
 
-// TODO: Add `$headless` option here?
 @at-root {
-	@include build(width.$options);
+	@if configuration.$headless == false {
+		@include build(width.$options);
+	}
 }

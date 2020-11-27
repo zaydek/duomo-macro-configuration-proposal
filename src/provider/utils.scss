@@ -1,0 +1,16 @@
+@use "sass:string";
+
+// Ex: has-suffix(8px, px) -> true
+@function has-suffix($str, $end) {
+	$str: "" + $str;
+	$end: "" + $end;
+	@return string.slice($str, 1 + string.length($str) - string.length($end)) == $end;
+}
+
+// Ex: trim-suffix(8px, px) -> "8"
+@function trim-suffix($str, $end) {
+	$str: "" + $str;
+	$end: "" + $end;
+	// TODO: Should `unquote`?
+	@return string.slice($str, 0, string.length($str) - string.length($end));
+}
