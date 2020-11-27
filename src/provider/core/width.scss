@@ -1,10 +1,15 @@
 @use "../getters";
 @use "../utils";
 
+// prettier-ignore
 $opts: (
 	shorthand: w,
 	property: width,
 	type: range,
-	range: utils.sum-list(getters.range() 100%, 100vw),
+	range: utils.var-join(
+		getters.range()
+		100%,
+		100vw,
+	),
 	resolver: rem,
 );

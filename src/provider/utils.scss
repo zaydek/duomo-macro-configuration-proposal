@@ -26,27 +26,20 @@
 
 // Ex:
 //
-// sum-list(1, 2)      -> (1, 2)
-// sum-list((1, 2), 3) -> (1, 2, 3)
+// var-join(1, 2)      -> (1, 2)
+// var-join((1, 2), 3) -> (1, 2, 3)
 //
-// NOTE: `list.join` does not support variadic arguments.
-@function sum-list($lists...) {
-	// $sum-list: ();
-	// @each $list in $lists {
-	// 	$sum-list: list.join($sum-list, $list);
-	// }
-	// @return $sum-list;
-
-	$sum-list: ();
+@function var-join($lists...) {
+	$var-join: ();
 	@each $list in $lists {
 		@if type-of($list) != "list" {
 			$any: $list;
-			$sum-list: list.join($sum-list, $any);
+			$var-join: list.join($var-join, $any);
 		} @else {
 			@each $any in $list {
-				$sum-list: list.join($sum-list, $any);
+				$var-join: list.join($var-join, $any);
 			}
 		}
 	}
-	@return $sum-list;
+	@return $var-join;
 }

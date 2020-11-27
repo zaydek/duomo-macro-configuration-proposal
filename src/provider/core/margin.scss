@@ -5,8 +5,6 @@ $opts: (
 	shorthand: m,
 	property: margin,
 	type: range,
-	range: utils.sum-list(getters.nrange(), getters.range()),
+	range: utils.var-join(getters.nrange(), getters.range()),
 	resolver: rem,
-	// breakpoints: breakpoints(),
-	// pseudos: none,,,,
 );

@@ -6,7 +6,7 @@ $opts: (
 	shorthand: h,
 	property: height,
 	type: range,
-	range: utils.sum-list(
+	range: utils.var-join(
 		getters.range()
 		100%,
 		100vh,
