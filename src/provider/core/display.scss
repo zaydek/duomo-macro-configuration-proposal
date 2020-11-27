@@ -1,14 +1,20 @@
 @use "../constructor" as *;
 @use "../helpers" as *;
 
-@mixin display {
-	.block {
+@mixin __impl {
+	#{amp()}block {
 		display: block;
 	}
+}
+
+@mixin display {
+	@include __impl;
 	@each $key, $n in breakpoints() {
 		@media (min-width: px($n)) {
-			.#{delimit($key)}block {
-				display: block;
+			.#{$key} {
+				@at-root {
+					@include __impl;
+				}
 			}
 		}
 	}
