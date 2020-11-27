@@ -9,8 +9,8 @@
 // 			width: #{$rv + px};
 // 		}
 // 	}
-// 	@each $key, $px in breakpoints() {
-// 		@media (min-width: px($px)) {
+// 	@each $key, $n in breakpoints() {
+// 		@media (min-width: px($n)) {
 // 			.#{$key} {
 // 				@each $rv in range() {
 // 					&\:w-#{$rv} {
@@ -35,13 +35,8 @@
 //
 // @at-root {
 // 	@include polyfill;
-// 	// @each $rv in nrange() {
-// 	// 	.w-#{$rv} {
-// 	// 		width: #{$rv + px};
-// 	// 	}
-// 	// }
-// 	@each $key, $px in breakpoints() {
-// 		@media (min-width: px($px)) {
+// 	@each $key, $n in breakpoints() {
+// 		@media (min-width: px($n)) {
 // 			.#{$key} {
 // 				@at-root {
 // 					@include polyfill;

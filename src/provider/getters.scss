@@ -8,13 +8,13 @@
 }
 
 // TODO: Should this be configurable?
-@function semantic($v) {
-	@if $v == 100% {
+@function name($any) {
+	@if $any == 100% {
 		@return "max";
-	} @else if $v == 100vw or $v == 100vw {
+	} @else if $any == 100vw or $any == 100vw {
 		@return "screen";
 	}
-	@return $v;
+	@return $any;
 }
 
 @function nrange() {
@@ -32,9 +32,9 @@
 	@return $got;
 }
 @function breakpoints() {
-	$safe-map: ();
-	@each $k, $v in configuration.$breakpoint-map {
-		$safe-map: map.set($safe-map, escapers.escape-breakpoint-key($k), $v);
+	$map: ();
+	@each $key, $n in configuration.$breakpoint-map {
+		$map: map.set($map, escapers.escape-breakpoint-key($key), $n);
 	}
-	@return $safe-map;
+	@return $map;
 }

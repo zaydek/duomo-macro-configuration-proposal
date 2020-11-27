@@ -18,17 +18,17 @@
 
 	@if $type == range {
 		@each $rv in $range {
-			.#{$shorthand}-#{getters.semantic($rv)} {
+			.#{$shorthand}-#{getters.name($rv)} {
 				#{$property}: resolvers.resolve($rv, $resolver);
 			}
 		}
 	}
-	@each $key, $px in getters.breakpoints() {
-		@media (min-width: resolvers.px($px)) {
+	@each $key, $n in getters.breakpoints() {
+		@media (min-width: resolvers.px($n)) {
 			.#{$key} {
 				@if $type == range {
 					@each $rv in $range {
-						&#{getters.delimiter()}#{$shorthand}-#{getters.semantic($rv)} {
+						&#{getters.delimiter()}#{$shorthand}-#{getters.name($rv)} {
 							#{$property}: resolvers.resolve($rv, $resolver);
 						}
 					}
