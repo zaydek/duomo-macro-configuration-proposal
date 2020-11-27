@@ -20,6 +20,9 @@
 @mixin constructor($opts) {
 	@each $opt in iterable($opts) {
 		$shorthand: map.get($opt, shorthand);
+		@if $shorthand == none {
+			$shorthand: map.get($opt, property);
+		}
 		$property: map.get($opt, property);
 		$type: map.get($opt, type);
 		$range: map.get($opt, range);
@@ -44,6 +47,7 @@
 	@include constructor(core.$padding-opts);
 	@include constructor(core.$width-opts);
 	@include constructor(core.$height-opts);
+	@include constructor(core.$opacity-opts);
 	@include constructor(core.$z-index-opts);
 }
 

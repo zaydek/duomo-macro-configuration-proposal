@@ -512,6 +512,90 @@
   height: 100vh;
 }
 
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-5 {
+  opacity: 0.05;
+}
+
+.opacity-10 {
+  opacity: 0.1;
+}
+
+.opacity-15 {
+  opacity: 0.15;
+}
+
+.opacity-20 {
+  opacity: 0.2;
+}
+
+.opacity-25 {
+  opacity: 0.25;
+}
+
+.opacity-30 {
+  opacity: 0.3;
+}
+
+.opacity-35 {
+  opacity: 0.35;
+}
+
+.opacity-40 {
+  opacity: 0.4;
+}
+
+.opacity-45 {
+  opacity: 0.45;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-55 {
+  opacity: 0.55;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+
+.opacity-65 {
+  opacity: 0.65;
+}
+
+.opacity-70 {
+  opacity: 0.7;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-85 {
+  opacity: 0.85;
+}
+
+.opacity-90 {
+  opacity: 0.9;
+}
+
+.opacity-95 {
+  opacity: 0.95;
+}
+
+.opacity-1 {
+  opacity: 1;
+}
+
 .-z-10 {
   z-index: -10;
 }
@@ -1053,6 +1137,90 @@
 
   .xs\:h-screen {
     height: 100vh;
+  }
+
+  .xs\:opacity-0 {
+    opacity: 0;
+  }
+
+  .xs\:opacity-5 {
+    opacity: 0.05;
+  }
+
+  .xs\:opacity-10 {
+    opacity: 0.1;
+  }
+
+  .xs\:opacity-15 {
+    opacity: 0.15;
+  }
+
+  .xs\:opacity-20 {
+    opacity: 0.2;
+  }
+
+  .xs\:opacity-25 {
+    opacity: 0.25;
+  }
+
+  .xs\:opacity-30 {
+    opacity: 0.3;
+  }
+
+  .xs\:opacity-35 {
+    opacity: 0.35;
+  }
+
+  .xs\:opacity-40 {
+    opacity: 0.4;
+  }
+
+  .xs\:opacity-45 {
+    opacity: 0.45;
+  }
+
+  .xs\:opacity-50 {
+    opacity: 0.5;
+  }
+
+  .xs\:opacity-55 {
+    opacity: 0.55;
+  }
+
+  .xs\:opacity-60 {
+    opacity: 0.6;
+  }
+
+  .xs\:opacity-65 {
+    opacity: 0.65;
+  }
+
+  .xs\:opacity-70 {
+    opacity: 0.7;
+  }
+
+  .xs\:opacity-75 {
+    opacity: 0.75;
+  }
+
+  .xs\:opacity-80 {
+    opacity: 0.8;
+  }
+
+  .xs\:opacity-85 {
+    opacity: 0.85;
+  }
+
+  .xs\:opacity-90 {
+    opacity: 0.9;
+  }
+
+  .xs\:opacity-95 {
+    opacity: 0.95;
+  }
+
+  .xs\:opacity-1 {
+    opacity: 1;
   }
 
   .xs\:-z-10 {
@@ -1598,6 +1766,90 @@
     height: 100vh;
   }
 
+  .sm\:opacity-0 {
+    opacity: 0;
+  }
+
+  .sm\:opacity-5 {
+    opacity: 0.05;
+  }
+
+  .sm\:opacity-10 {
+    opacity: 0.1;
+  }
+
+  .sm\:opacity-15 {
+    opacity: 0.15;
+  }
+
+  .sm\:opacity-20 {
+    opacity: 0.2;
+  }
+
+  .sm\:opacity-25 {
+    opacity: 0.25;
+  }
+
+  .sm\:opacity-30 {
+    opacity: 0.3;
+  }
+
+  .sm\:opacity-35 {
+    opacity: 0.35;
+  }
+
+  .sm\:opacity-40 {
+    opacity: 0.4;
+  }
+
+  .sm\:opacity-45 {
+    opacity: 0.45;
+  }
+
+  .sm\:opacity-50 {
+    opacity: 0.5;
+  }
+
+  .sm\:opacity-55 {
+    opacity: 0.55;
+  }
+
+  .sm\:opacity-60 {
+    opacity: 0.6;
+  }
+
+  .sm\:opacity-65 {
+    opacity: 0.65;
+  }
+
+  .sm\:opacity-70 {
+    opacity: 0.7;
+  }
+
+  .sm\:opacity-75 {
+    opacity: 0.75;
+  }
+
+  .sm\:opacity-80 {
+    opacity: 0.8;
+  }
+
+  .sm\:opacity-85 {
+    opacity: 0.85;
+  }
+
+  .sm\:opacity-90 {
+    opacity: 0.9;
+  }
+
+  .sm\:opacity-95 {
+    opacity: 0.95;
+  }
+
+  .sm\:opacity-1 {
+    opacity: 1;
+  }
+
   .sm\:-z-10 {
     z-index: -10;
   }
@@ -2139,6 +2391,90 @@
 
   .md\:h-screen {
     height: 100vh;
+  }
+
+  .md\:opacity-0 {
+    opacity: 0;
+  }
+
+  .md\:opacity-5 {
+    opacity: 0.05;
+  }
+
+  .md\:opacity-10 {
+    opacity: 0.1;
+  }
+
+  .md\:opacity-15 {
+    opacity: 0.15;
+  }
+
+  .md\:opacity-20 {
+    opacity: 0.2;
+  }
+
+  .md\:opacity-25 {
+    opacity: 0.25;
+  }
+
+  .md\:opacity-30 {
+    opacity: 0.3;
+  }
+
+  .md\:opacity-35 {
+    opacity: 0.35;
+  }
+
+  .md\:opacity-40 {
+    opacity: 0.4;
+  }
+
+  .md\:opacity-45 {
+    opacity: 0.45;
+  }
+
+  .md\:opacity-50 {
+    opacity: 0.5;
+  }
+
+  .md\:opacity-55 {
+    opacity: 0.55;
+  }
+
+  .md\:opacity-60 {
+    opacity: 0.6;
+  }
+
+  .md\:opacity-65 {
+    opacity: 0.65;
+  }
+
+  .md\:opacity-70 {
+    opacity: 0.7;
+  }
+
+  .md\:opacity-75 {
+    opacity: 0.75;
+  }
+
+  .md\:opacity-80 {
+    opacity: 0.8;
+  }
+
+  .md\:opacity-85 {
+    opacity: 0.85;
+  }
+
+  .md\:opacity-90 {
+    opacity: 0.9;
+  }
+
+  .md\:opacity-95 {
+    opacity: 0.95;
+  }
+
+  .md\:opacity-1 {
+    opacity: 1;
   }
 
   .md\:-z-10 {
@@ -2684,6 +3020,90 @@
     height: 100vh;
   }
 
+  .lg\:opacity-0 {
+    opacity: 0;
+  }
+
+  .lg\:opacity-5 {
+    opacity: 0.05;
+  }
+
+  .lg\:opacity-10 {
+    opacity: 0.1;
+  }
+
+  .lg\:opacity-15 {
+    opacity: 0.15;
+  }
+
+  .lg\:opacity-20 {
+    opacity: 0.2;
+  }
+
+  .lg\:opacity-25 {
+    opacity: 0.25;
+  }
+
+  .lg\:opacity-30 {
+    opacity: 0.3;
+  }
+
+  .lg\:opacity-35 {
+    opacity: 0.35;
+  }
+
+  .lg\:opacity-40 {
+    opacity: 0.4;
+  }
+
+  .lg\:opacity-45 {
+    opacity: 0.45;
+  }
+
+  .lg\:opacity-50 {
+    opacity: 0.5;
+  }
+
+  .lg\:opacity-55 {
+    opacity: 0.55;
+  }
+
+  .lg\:opacity-60 {
+    opacity: 0.6;
+  }
+
+  .lg\:opacity-65 {
+    opacity: 0.65;
+  }
+
+  .lg\:opacity-70 {
+    opacity: 0.7;
+  }
+
+  .lg\:opacity-75 {
+    opacity: 0.75;
+  }
+
+  .lg\:opacity-80 {
+    opacity: 0.8;
+  }
+
+  .lg\:opacity-85 {
+    opacity: 0.85;
+  }
+
+  .lg\:opacity-90 {
+    opacity: 0.9;
+  }
+
+  .lg\:opacity-95 {
+    opacity: 0.95;
+  }
+
+  .lg\:opacity-1 {
+    opacity: 1;
+  }
+
   .lg\:-z-10 {
     z-index: -10;
   }
@@ -3227,6 +3647,90 @@
     height: 100vh;
   }
 
+  .xl\:opacity-0 {
+    opacity: 0;
+  }
+
+  .xl\:opacity-5 {
+    opacity: 0.05;
+  }
+
+  .xl\:opacity-10 {
+    opacity: 0.1;
+  }
+
+  .xl\:opacity-15 {
+    opacity: 0.15;
+  }
+
+  .xl\:opacity-20 {
+    opacity: 0.2;
+  }
+
+  .xl\:opacity-25 {
+    opacity: 0.25;
+  }
+
+  .xl\:opacity-30 {
+    opacity: 0.3;
+  }
+
+  .xl\:opacity-35 {
+    opacity: 0.35;
+  }
+
+  .xl\:opacity-40 {
+    opacity: 0.4;
+  }
+
+  .xl\:opacity-45 {
+    opacity: 0.45;
+  }
+
+  .xl\:opacity-50 {
+    opacity: 0.5;
+  }
+
+  .xl\:opacity-55 {
+    opacity: 0.55;
+  }
+
+  .xl\:opacity-60 {
+    opacity: 0.6;
+  }
+
+  .xl\:opacity-65 {
+    opacity: 0.65;
+  }
+
+  .xl\:opacity-70 {
+    opacity: 0.7;
+  }
+
+  .xl\:opacity-75 {
+    opacity: 0.75;
+  }
+
+  .xl\:opacity-80 {
+    opacity: 0.8;
+  }
+
+  .xl\:opacity-85 {
+    opacity: 0.85;
+  }
+
+  .xl\:opacity-90 {
+    opacity: 0.9;
+  }
+
+  .xl\:opacity-95 {
+    opacity: 0.95;
+  }
+
+  .xl\:opacity-1 {
+    opacity: 1;
+  }
+
   .xl\:-z-10 {
     z-index: -10;
   }
@@ -3768,6 +4272,90 @@
 
   .\32 xl\:h-screen {
     height: 100vh;
+  }
+
+  .\32 xl\:opacity-0 {
+    opacity: 0;
+  }
+
+  .\32 xl\:opacity-5 {
+    opacity: 0.05;
+  }
+
+  .\32 xl\:opacity-10 {
+    opacity: 0.1;
+  }
+
+  .\32 xl\:opacity-15 {
+    opacity: 0.15;
+  }
+
+  .\32 xl\:opacity-20 {
+    opacity: 0.2;
+  }
+
+  .\32 xl\:opacity-25 {
+    opacity: 0.25;
+  }
+
+  .\32 xl\:opacity-30 {
+    opacity: 0.3;
+  }
+
+  .\32 xl\:opacity-35 {
+    opacity: 0.35;
+  }
+
+  .\32 xl\:opacity-40 {
+    opacity: 0.4;
+  }
+
+  .\32 xl\:opacity-45 {
+    opacity: 0.45;
+  }
+
+  .\32 xl\:opacity-50 {
+    opacity: 0.5;
+  }
+
+  .\32 xl\:opacity-55 {
+    opacity: 0.55;
+  }
+
+  .\32 xl\:opacity-60 {
+    opacity: 0.6;
+  }
+
+  .\32 xl\:opacity-65 {
+    opacity: 0.65;
+  }
+
+  .\32 xl\:opacity-70 {
+    opacity: 0.7;
+  }
+
+  .\32 xl\:opacity-75 {
+    opacity: 0.75;
+  }
+
+  .\32 xl\:opacity-80 {
+    opacity: 0.8;
+  }
+
+  .\32 xl\:opacity-85 {
+    opacity: 0.85;
+  }
+
+  .\32 xl\:opacity-90 {
+    opacity: 0.9;
+  }
+
+  .\32 xl\:opacity-95 {
+    opacity: 0.95;
+  }
+
+  .\32 xl\:opacity-1 {
+    opacity: 1;
   }
 
   .\32 xl\:-z-10 {
