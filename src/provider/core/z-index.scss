@@ -3,7 +3,7 @@
 @use "../mixins" as *;
 
 // prettier-ignore
-$__opts: (
+$-opts: (
 	shorthand: z,
 	property: z-index,
 	type: range,
@@ -24,5 +24,5 @@ $__opts: (
 );
 
 @mixin z-index {
-	@include constructor($__opts);
+	@include constructor($-opts);
 }

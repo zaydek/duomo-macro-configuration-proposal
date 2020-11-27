@@ -3,7 +3,7 @@
 @use "../mixins" as *;
 
 // prettier-ignore
-$__opts: (
+$-opts: (
 	(
 		shorthand: m,
 		property: margin,
@@ -91,5 +91,5 @@ $__opts: (
 );
 
 @mixin margin {
-	@include constructor($__opts);
+	@include constructor($-opts);
 }

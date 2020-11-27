@@ -3,7 +3,7 @@
 @use "../mixins" as *;
 
 // prettier-ignore
-$__opts: (
+$-opts: (
 	(
 		shorthand: border,
 		property: border-width,
@@ -52,5 +52,5 @@ $__opts: (
 );
 
 @mixin border {
-	@include constructor($__opts);
+	@include constructor($-opts);
 }

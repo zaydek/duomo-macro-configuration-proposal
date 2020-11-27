@@ -2,15 +2,15 @@
 @use "../helpers" as *;
 @use "../mixins" as *;
 
-@mixin __impl {
+@mixin -impl {
 	#{amp()}block {
 		display: block;
 	}
 }
 
 @mixin display {
-	@include __impl;
+	@include -impl;
 	@include responsive {
-		@include __impl;
+		@include -impl;
 	}
 }

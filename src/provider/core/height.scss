@@ -3,7 +3,7 @@
 @use "../mixins" as *;
 
 // prettier-ignore
-$__opts: (
+$-opts: (
 	shorthand: h,
 	property: height,
 	type: range,
@@ -18,5 +18,5 @@ $__opts: (
 );
 
 @mixin height {
-	@include constructor($__opts);
+	@include constructor($-opts);
 }

@@ -2,7 +2,7 @@
 @use "sass:string";
 
 // prettier-ignore
-$__str-digits: (
+$-str-digits: (
 	"0",
 	"1",
 	"2",
@@ -18,7 +18,7 @@ $__str-digits: (
 // https://mothereff.in/css-escapes
 //
 // prettier-ignore
-$__str-escape-chars: (
+$-str-escape-chars: (
 	"\!",
 	"\"",
 	"\#",
@@ -57,7 +57,7 @@ $__str-escape-chars: (
 	$esc-str: "";
 	@for $x from 1 through string.length($str) {
 		$ch: string.slice($str, $x, $x);
-		@if list.index($__str-escape-chars, $ch) {
+		@if list.index($-str-escape-chars, $ch) {
 			// NOTE: `"\\..."` must be quoted.
 			$esc-str: $esc-str + "\\"+ $ch;
 		} @else {
@@ -72,7 +72,7 @@ $__str-escape-chars: (
 	$esc-str: "";
 	@for $x from 1 through string.length($str) {
 		$ch: string.slice($str, $x, $x);
-		@if ($x == 1 and list.index($__str-digits, $ch)) or list.index($__str-escape-chars, $ch) {
+		@if ($x == 1 and list.index($-str-digits, $ch)) or list.index($-str-escape-chars, $ch) {
 			// NOTE: `"\\..."` must be quoted.
 			$esc-str: $esc-str + "\\3"+ $ch;
 		} @else {

@@ -3,7 +3,7 @@
 @use "../mixins" as *;
 
 // prettier-ignore
-$__opts: (
+$-opts: (
 	(
 		shorthand: p,
 		property: padding,
@@ -63,5 +63,5 @@ $__opts: (
 );
 
 @mixin padding {
-	@include constructor($__opts);
+	@include constructor($-opts);
 }

@@ -2,7 +2,7 @@
 @use "../helpers";
 
 // prettier-ignore
-$__opts: (
+$-opts: (
 	shorthand: none,
 	property: opacity,
 	type: range,
@@ -38,5 +38,5 @@ $__opts: (
 );
 
 @mixin opacity {
-	@include constructor($__opts);
+	@include constructor($-opts);
 }
