@@ -1,0 +1,15 @@
+@use "../constructor" as *;
+@use "../helpers" as *;
+// @use "../mixins" as *;
+
+@mixin responsive {
+	@each $key, $n in breakpoints() {
+		@media (min-width: px($n)) {
+			.#{$key} {
+				@at-root {
+					@content;
+				}
+			}
+		}
+	}
+}

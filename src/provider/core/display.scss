@@ -1,5 +1,6 @@
 @use "../constructor" as *;
 @use "../helpers" as *;
+@use "../mixins" as *;
 
 @mixin __impl {
 	#{amp()}block {
@@ -9,13 +10,7 @@
 
 @mixin display {
 	@include __impl;
-	@each $key, $n in breakpoints() {
-		@media (min-width: px($n)) {
-			.#{$key} {
-				@at-root {
-					@include __impl;
-				}
-			}
-		}
+	@include responsive {
+		@include __impl;
 	}
 }

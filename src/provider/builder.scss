@@ -19,15 +19,4 @@
 	@if configuration.$headless == false {
 		@include lib;
 	}
-
-	// @include lib;
-	// @each $key, $n in breakpoints() {
-	// 	@media (min-width: px($n)) {
-	// 		.#{$key} {
-	// 			@at-root {
-	// 				@include lib;
-	// 			}
-	// 		}
-	// 	}
-	// }
 }
