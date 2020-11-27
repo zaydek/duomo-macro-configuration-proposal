@@ -1,3 +1,9 @@
+//
+// Top-level settings
+//
+
+// TODO: Change configuration mechanism.
+
 // Describes whether to generate Duomo.
 $headless: false !default;
 
@@ -9,6 +15,34 @@ $debugger: true !default;
 
 // Describes whether to generate stagger utilities.
 $stagger: true !default;
+
+//
+// Ranges
+//
+
+// TODO: Add getter for `nrange()`.
+//
+// prettier-ignore
+$nrange: (
+	-1,
+	-2,
+	-4,
+	-8,
+);
+
+// TODO: Add getter for `range()`.
+//
+// prettier-ignore
+$range: (
+	1,
+	2,
+	4,
+	8,
+);
+
+//
+// Breakpoints
+//
 
 $breakpoint-delimiter: ":";
 

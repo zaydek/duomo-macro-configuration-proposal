@@ -25,9 +25,9 @@
 			}
 		}
 	}
-	@each $k, $v in getters.breakpoints() {
-		@media (min-width: resolvers.px($v)) {
-			.#{$k} {
+	@each $key, $px in getters.breakpoints() {
+		@media (min-width: resolvers.px($px)) {
+			.#{$key} {
 				@if $type == range {
 					@each $rv in $range {
 						&#{$breakpoint-delimiter}#{$shorthand}-#{getters.semantic($rv)} {
