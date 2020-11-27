@@ -4,6 +4,7 @@
 @use "core";
 
 @mixin lib {
+	@include core.group;
 	@include core.margin;
 	@include core.padding;
 	@include core.width;
