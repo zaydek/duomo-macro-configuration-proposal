@@ -9,7 +9,9 @@ $-opts: (
 	type: range,
 	range: var-join(
 		auto,
-		range()
+		range(),
+		min-content,
+		max-content,
 		100%,
 		100vh,
 	),

@@ -28,28 +28,44 @@ $-opts: (
 	(
 		shorthand: l,
 		property: left,
-		range: range(),
+		range: var-join(
+			nrange(),
+			auto,
+			range(),
+		),
 		resolver: rem,
 		variants: (responsive),
 	),
 	(
 		shorthand: r,
 		property: right,
-		range: range(),
+		range: var-join(
+			nrange(),
+			auto,
+			range(),
+		),
 		resolver: rem,
 		variants: (responsive),
 	),
 	(
 		shorthand: t,
 		property: top,
-		range: range(),
+		range: var-join(
+			nrange(),
+			auto,
+			range(),
+		),
 		resolver: rem,
 		variants: (responsive),
 	),
 	(
 		shorthand: b,
 		property: bottom,
-		range: range(),
+		range: var-join(
+			nrange(),
+			auto,
+			range(),
+		),
 		resolver: rem,
 		variants: (responsive),
 	),

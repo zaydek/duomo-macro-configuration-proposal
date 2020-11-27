@@ -39,6 +39,8 @@
 	// prettier-ignore
 	$ret:
 		$any == auto or
+		$any == min-content or
+		$any == max-content or
 		utils.has-suffix($any, "%") or
 		utils.has-suffix($any, "vw") or
 		utils.has-suffix($any, "vh") or
