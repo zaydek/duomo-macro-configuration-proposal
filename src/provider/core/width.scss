@@ -13,6 +13,7 @@ $__opts: (
 		100vw,
 	),
 	resolver: rem,
+	pseudos: (),
 );
 
 @mixin width {

@@ -45,12 +45,24 @@
 		// Computed:
 		$percent: conv-percent($type, $range);
 
-		// TODO
 		@if $type == range {
 			@each $rv in $range {
 				#{amp()}#{n($rv)}#{$shorthand}-#{code-name(abs(if($percent, $rv * 100, $rv)))} {
 					@each $prop in $property {
 						#{$prop}: resolve($rv, $resolver);
+					}
+				}
+			}
+			@if list.index($pseudos, responsive) {
+				@each $key, $n in breakpoints() {
+					@media (min-width: px($n)) {
+						@each $rv in $range {
+							#{amp()}#{n($rv)}#{$shorthand}-#{code-name(abs(if($percent, $rv * 100, $rv)))} {
+								@each $prop in $property {
+									#{$prop}: resolve($rv, $resolver);
+								}
+							}
+						}
 					}
 				}
 			}
