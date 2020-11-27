@@ -5,6 +5,30 @@ $opts: (
 	shorthand: m,
 	property: margin,
 	type: range,
-	range: utils.var-join(getters.nrange(), getters.range()),
+	range: utils.var-join(auto, getters.nrange(), getters.range()),
 	resolver: rem,
 );
+
+// $opts: (
+// 	(
+// 		shorthand: m,
+// 		property: margin,
+// 		type: range,
+// 		range: utils.var-join(auto, getters.nrange(), getters.range()),
+// 		resolver: rem,
+// 	),
+// 	(
+// 		shorthand: mx,
+// 		property: (margin-left, margin-right),
+// 		type: range,
+// 		range: utils.var-join(auto, getters.nrange(), getters.range()),
+// 		resolver: rem,
+// 	),
+// 	(
+// 		shorthand: my,
+// 		property: (margin-top, margin-bottom),
+// 		type: range,
+// 		range: utils.var-join(auto, getters.nrange(), getters.range()),
+// 		resolver: rem,
+// 	),
+// );

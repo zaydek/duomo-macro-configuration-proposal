@@ -18,7 +18,7 @@
 
 	@if $type == range {
 		@each $rv in $range {
-			#{amp()}#{n($rv)}#{$shorthand}-#{name(math.abs($rv))} {
+			#{amp()}#{n($rv)}#{$shorthand}-#{ident(if(type-of($rv) != "number", $rv, math.abs($rv)))} {
 				#{$property}: resolve($rv, $resolver);
 			}
 		}

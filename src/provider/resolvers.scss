@@ -35,14 +35,18 @@
 	@return $floored + px;
 }
 
+@function passthrough($any) {
+	// prettier-ignore
+	$ret:
+		$any == auto or
+		utils.has-suffix($any, "%") or
+		utils.has-suffix($any, "vw") or
+		utils.has-suffix($any, "vh");
+	@return $ret;
+}
+
 @function resolve($any, $resolver) {
-	// No-op:
-	//
-	// - `%`
-	// - `vw`
-	// - `vh`
-	//
-	@if utils.has-suffix($any, "%") or utils.has-suffix($any, "vw") or utils.has-suffix($any, "vh") {
+	@if passthrough($any) {
 		@return $any;
 	}
 

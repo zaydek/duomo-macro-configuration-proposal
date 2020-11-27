@@ -2,6 +2,7 @@
 
 @use "configuration";
 @use "escapers";
+@use "resolvers";
 
 // Ex:
 //
@@ -9,6 +10,9 @@
 // n(0) -> ""
 //
 @function n($rv) {
+	@if resolvers.passthrough($rv) {
+		@return "";
+	}
 	@return if($rv < 0, "-", "");
 }
 
@@ -31,7 +35,7 @@
 // TODO: Should this be configurable?
 // TODO: Add support for `%`, etc.
 //
-@function name($any) {
+@function ident($any) {
 	@if $any == 100% {
 		@return "max";
 	} @else if $any == 100vw or $any == 100vh {
