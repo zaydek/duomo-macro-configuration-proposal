@@ -40,7 +40,7 @@
 		$range: map.get($opt, range);
 		$resolver: map.get($opt, resolver);
 		$breakpoints: map.get($opt, breakpoints);
-		$pseudos: map.get($opt, pseudos);
+		$variants: map.get($opt, variants);
 
 		// Computed:
 		$percent: conv-percent($type, $range);
@@ -53,7 +53,7 @@
 					}
 				}
 			}
-			@if list.index($pseudos, responsive) {
+			@if list.index($variants, responsive) {
 				@each $key, $n in breakpoints() {
 					@media (min-width: px($n)) {
 						@each $rv in $range {

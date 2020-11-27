@@ -13,7 +13,7 @@ $__opts: (
 		100vh,
 	),
 	resolver: rem,
-	pseudos: (),
+	variants: (responsive),
 );
 
 @mixin height {

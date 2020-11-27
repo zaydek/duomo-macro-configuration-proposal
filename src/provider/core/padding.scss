@@ -9,7 +9,7 @@ $__opts: (
 		type: range,
 		range: range(),
 		resolver: rem,
-		pseudos: (responsive),
+		variants: (responsive),
 	),
 	(
 		shorthand: px,
@@ -17,7 +17,7 @@ $__opts: (
 		type: range,
 		range: range(),
 		resolver: rem,
-		pseudos: (responsive),
+		variants: (responsive),
 	),
 	(
 		shorthand: py,
@@ -25,7 +25,7 @@ $__opts: (
 		type: range,
 		range: range(),
 		resolver: rem,
-		pseudos: (responsive),
+		variants: (responsive),
 	),
 	(
 		shorthand: pt,
@@ -33,7 +33,7 @@ $__opts: (
 		type: range,
 		range: range(),
 		resolver: rem,
-		pseudos: (responsive),
+		variants: (responsive),
 	),
 	(
 		shorthand: pr,
@@ -41,7 +41,7 @@ $__opts: (
 		type: range,
 		range: range(),
 		resolver: rem,
-		pseudos: (responsive),
+		variants: (responsive),
 	),
 	(
 		shorthand: pb,
@@ -49,7 +49,7 @@ $__opts: (
 		type: range,
 		range: range(),
 		resolver: rem,
-		pseudos: (responsive),
+		variants: (responsive),
 	),
 	(
 		shorthand: pl,
@@ -57,7 +57,7 @@ $__opts: (
 		type: range,
 		range: range(),
 		resolver: rem,
-		pseudos: (responsive),
+		variants: (responsive),
 	),
 );
 

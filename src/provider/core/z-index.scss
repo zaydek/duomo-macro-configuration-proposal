@@ -16,7 +16,7 @@ $__opts: (
 		 50,
 	),
 	resolver: none,
-	pseudos: (responsive),
+	variants: (responsive),
 );
 
 @mixin z-index {
