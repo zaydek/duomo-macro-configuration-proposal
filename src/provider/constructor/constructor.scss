@@ -1,9 +1,10 @@
+@use "sass:list";
 @use "sass:map";
 @use "sass:math";
 
 @use "../helpers" as *;
 
-@function iterate($opts) {
+@function to-array($opts) {
 	// prettier-ignore
 	$ret: if(
 		type-of($opts) == "map",
@@ -13,8 +14,21 @@
 	@return $ret;
 }
 
+@function conv-percent($type, $range) {
+	$ok: $type == range and type-of(list.nth($range, 1)) == "number" and list.nth($range, 1) >= 0 and
+		type-of(list.nth($range, -1)) == "number" and list.nth($range, -1) <= 1;
+	@return $ok;
+}
+
+@function abs($any) {
+	@if type-of($any) == "number" {
+		@return math.abs($any);
+	}
+	@return $any;
+}
+
 @mixin constructor($opts) {
-	@each $opt in iterate($opts) {
+	@each $opt in to-array($opts) {
 		// prettier-ignore
 		$shorthand: if(
 			map.get($opt, shorthand) == none,
@@ -28,10 +42,13 @@
 		$breakpoints: map.get($opt, breakpoints);
 		$pseudos: map.get($opt, pseudos);
 
+		// Computed:
+		$percent: conv-percent($type, $range);
+
 		// TODO
 		@if $type == range {
 			@each $rv in $range {
-				#{amp()}#{n($rv)}#{$shorthand}-#{ident(if(type-of($rv) != "number", $rv, math.abs($rv)))} {
+				#{amp()}#{n($rv)}#{$shorthand}-#{ident(abs(if($percent, $rv * 100, $rv)))} {
 					@each $prop in $property {
 						#{$prop}: resolve($rv, $resolver);
 					}

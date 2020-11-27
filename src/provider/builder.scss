@@ -3,22 +3,23 @@
 @use "configuration";
 @use "core";
 
-@mixin props {
+@mixin lib {
 	@include core.margin;
 	@include core.padding;
 	@include core.width;
 	@include core.height;
+	@include core.opacity;
 	@include core.z-index;
 }
 
 @at-root {
 	@if configuration.$headless == false {
-		@include props;
+		@include lib;
 		@each $key, $n in breakpoints() {
 			@media (min-width: px($n)) {
 				.#{$key} {
 					@at-root {
-						@include props;
+						@include lib;
 					}
 				}
 			}
