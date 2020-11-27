@@ -15,10 +15,7 @@ $options: (
 		100%,
 		100vw,
 	),
-	// TODO: Add support for `exempt` or `none`.
 	resolver: rem,
-	// TODO: Add support (sm, md) etc.
-	// breakpoints: (xs, sm, md, lg, xl, 2xl),
-	breakpoints: breakpoints(), // Does this work?
-	pseudo: none,
+	breakpoints: breakpoints(),
+	pseudos: none,
 );

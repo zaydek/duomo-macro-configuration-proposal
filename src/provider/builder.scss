@@ -16,7 +16,7 @@
 	$range: map.get($options, range);
 	$resolver: map.get($options, resolver);
 	$breakpoints: map.get($options, breakpoints);
-	$pseudo: map.get($options, pseudo);
+	$pseudos: map.get($options, pseudos);
 
 	@if $type == range {
 		@each $rv in $range {
@@ -30,7 +30,6 @@
 			.#{$k} {
 				@if $type == range {
 					@each $rv in $range {
-						// TODO: Add support for semantic `$rv`s.
 						&#{$breakpoint-delimiter}#{$shorthand}-#{getters.semantic($rv)} {
 							#{$property}: resolvers.resolve($rv, $resolver);
 						}

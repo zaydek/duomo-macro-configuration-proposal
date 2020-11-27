@@ -2,54 +2,59 @@
 
 @use "utils";
 
-@function rem($v) {
-	@if type-of($v) != "number" {
-		@return $v;
+@function rem($any) {
+	@if type-of($any) != "number" {
+		@return $any;
 	}
-	$floored: math.floor($v);
+	$floored: math.floor($any);
 	@if $floored == 0 {
 		@return 0;
 	}
 	@return $floored / 16 + rem;
 }
 
-@function em($v) {
-	@if type-of($v) != "number" {
-		@return $v;
+@function em($any) {
+	@if type-of($any) != "number" {
+		@return $any;
 	}
-	$floored: math.floor($v);
+	$floored: math.floor($any);
 	@if $floored == 0 {
 		@return 0;
 	}
 	@return $floored / 16 + em;
 }
 
-@function px($v) {
-	@if type-of($v) != "number" {
-		@return $v;
+@function px($any) {
+	@if type-of($any) != "number" {
+		@return $any;
 	}
-	$floored: math.floor($v);
+	$floored: math.floor($any);
 	@if $floored == 0 {
 		@return 0;
 	}
 	@return $floored + px;
 }
 
-@function resolve($v, $resolver) {
-	// TODO
-	@if utils.has-suffix($v, "%") or utils.has-suffix($v, "vw") or utils.has-suffix($v, "vh") {
-		@return $v;
+@function resolve($any, $resolver) {
+	// No-op:
+	//
+	// - `%`
+	// - `vw`
+	// - `vh`
+	//
+	@if utils.has-suffix($any, "%") or utils.has-suffix($any, "vw") or utils.has-suffix($any, "vh") {
+		@return $any;
 	}
 
 	@if $resolver != none and $resolver != rem and $resolver != em and $resolver != px {
 		@error "resolve: cannot resolve a non-rem, em, px, or none resolver type";
 	}
 	@if $resolver == rem {
-		@return rem($v);
+		@return rem($any);
 	} @else if $resolver == em {
-		@return em($v);
+		@return em($any);
 	} @else if $resolver == px {
-		@return px($v);
+		@return px($any);
 	}
-	@return $v;
+	@return $any;
 }

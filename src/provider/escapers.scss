@@ -1,13 +1,24 @@
 @use "sass:list";
 @use "sass:string";
 
-$__digits: ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
+// prettier-ignore
+$__str-digits: (
+	"0",
+	"1",
+	"2",
+	"3",
+	"4",
+	"5",
+	"6",
+	"7",
+	"8",
+	"9",
+);
 
 // https://mothereff.in/css-escapes
-// https://mathiasbynens.be/notes/css-escapes
 //
 // prettier-ignore
-$__escape-chars: (
+$__str-escape-chars: (
 	"\!",
 	"\"",
 	"\#",
@@ -46,7 +57,8 @@ $__escape-chars: (
 	$esc-str: "";
 	@for $x from 1 through string.length($str) {
 		$ch: string.slice($str, $x, $x);
-		@if list.index($__escape-chars, $ch) {
+		@if list.index($__str-escape-chars, $ch) {
+			// NOTE: `"\\..."` must be quoted.
 			$esc-str: $esc-str + "\\"+ $ch;
 		} @else {
 			$esc-str: $esc-str + $ch;
@@ -60,8 +72,8 @@ $__escape-chars: (
 	$esc-str: "";
 	@for $x from 1 through string.length($str) {
 		$ch: string.slice($str, $x, $x);
-		@if ($x == 1 and list.index($__digits, $ch)) or list.index($__escape-chars, $ch) {
-			// NOTE: `$esc-str + \3` + $ch; does not work as expected.
+		@if ($x == 1 and list.index($__str-digits, $ch)) or list.index($__str-escape-chars, $ch) {
+			// NOTE: `"\\..."` must be quoted.
 			$esc-str: $esc-str + "\\3"+ $ch;
 		} @else {
 			$esc-str: $esc-str + $ch;
