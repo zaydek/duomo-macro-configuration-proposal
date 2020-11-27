@@ -30,7 +30,11 @@ $__opts: (
 		1,
 	),
 	resolver: none,
-	variants: (responsive),
+	variants: (
+		responsive,
+		hover,
+		focus,
+	),
 );
 
 @mixin opacity {
