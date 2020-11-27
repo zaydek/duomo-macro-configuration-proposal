@@ -1,0 +1,62 @@
+@use "sass:map";
+@use "sass:math";
+
+@use "getters" as *;
+@use "resolvers" as *;
+
+@use "configuration";
+@use "core";
+
+@function iterable($opts) {
+	// prettier-ignore
+	$ret: if(
+		type-of($opts) == "map",
+		($opts,),
+		$opts,
+	);
+	@return $ret;
+}
+
+@mixin constructor($opts) {
+	@each $opt in iterable($opts) {
+		$shorthand: map.get($opt, shorthand);
+		$property: map.get($opt, property);
+		$type: map.get($opt, type);
+		$range: map.get($opt, range);
+		$resolver: map.get($opt, resolver);
+		$breakpoints: map.get($opt, breakpoints);
+		$pseudos: map.get($opt, pseudos);
+
+		@if $type == range {
+			@each $rv in $range {
+				#{amp()}#{n($rv)}#{$shorthand}-#{ident(if(type-of($rv) != "number", $rv, math.abs($rv)))} {
+					@each $prop in $property {
+						#{$prop}: resolve($rv, $resolver);
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin props {
+	@include constructor(core.$margin-opts);
+	@include constructor(core.$padding-opts);
+	@include constructor(core.$width-opts);
+	@include constructor(core.$height-opts);
+}
+
+@at-root {
+	@if configuration.$headless == false {
+		@include props;
+		@each $key, $n in breakpoints() {
+			@media (min-width: px($n)) {
+				.#{$key} {
+					@at-root {
+						@include props;
+					}
+				}
+			}
+		}
+	}
+}

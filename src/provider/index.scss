@@ -1,6 +1,6 @@
-// @forward "builder"; // TODO: Should this be exported?
 @forward "configuration";
 @forward "getters";
 @forward "resolvers";
 
-@use "builder";
+// TODO: `@forward`?
+@use "constructor";

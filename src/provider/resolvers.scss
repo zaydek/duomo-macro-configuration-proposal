@@ -51,7 +51,7 @@
 	}
 
 	@if $resolver != none and $resolver != rem and $resolver != em and $resolver != px {
-		@error "resolve: cannot resolve a non-rem, em, px, or none resolver type";
+		@error "resolve: `$resolver` must be `rem`, `em`, `px`, or `none`";
 	}
 	@if $resolver == rem {
 		@return rem($any);
