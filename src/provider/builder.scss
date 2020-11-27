@@ -29,6 +29,7 @@
 	@include build(core.$margin-opts);
 	@include build(core.$padding-opts);
 	@include build(core.$width-opts);
+	@include build(core.$height-opts);
 }
 
 @at-root {
