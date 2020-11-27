@@ -8,6 +8,7 @@
 	}
 }
 
+// TODO: `variants: (responsive)`
 @mixin display {
 	@include -impl;
 	@include responsive {

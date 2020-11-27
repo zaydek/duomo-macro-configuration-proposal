@@ -1,0 +1,99 @@
+@use "../constructor" as *;
+@use "../helpers" as *;
+@use "../mixins" as *;
+
+// prettier-ignore
+$-opts: (
+	(
+		shorthand: x,
+		property: (left, right),
+		type: range,
+		range: 0,
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: y,
+		property: (top, bottom),
+		type: range,
+		range: 0,
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: l,
+		property: left,
+		type: range,
+		range: range(),
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: r,
+		property: right,
+		type: range,
+		range: range(),
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: t,
+		property: top,
+		type: range,
+		range: range(),
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: b,
+		property: bottom,
+		type: range,
+		range: range(),
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: a,
+		property: (top, right, bottom, left),
+		type: range,
+		range: 0,
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: tr,
+		property: (top, right),
+		type: range,
+		range: 0,
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: br,
+		property: (bottom, right),
+		type: range,
+		range: 0,
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: bl,
+		property: (bottom, left),
+		type: range,
+		range: 0,
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: tl,
+		property: (top, left),
+		type: range,
+		range: 0,
+		resolver: rem,
+		variants: (responsive),
+	),
+);
+
+@mixin position {
+	@include constructor($-opts);
+}
