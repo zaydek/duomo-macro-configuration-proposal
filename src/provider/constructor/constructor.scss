@@ -3,6 +3,19 @@
 
 @use "../helpers" as *;
 
+// FIXME: See NOTE before `constructor`.
+@mixin FIXME-responsive {
+	@each $key, $n in breakpoints() {
+		@media (min-width: px($n)) {
+			.#{$key} {
+				@at-root {
+					@content;
+				}
+			}
+		}
+	}
+}
+
 @function to-list($opts) {
 	// prettier-ignore
 	$ret: if(
@@ -24,6 +37,7 @@
 	@return $ok;
 }
 
+// TODO: Can change API to support `@content`.
 @mixin constructor($opts) {
 	@each $opt in to-list($opts) {
 		// prettier-ignore
@@ -84,17 +98,11 @@
 				}
 			}
 			// (responsive)
-			@if list.index($variants, responsive) {
-				@each $key, $n in breakpoints() {
-					@media (min-width: px($n)) {
-						.#{$key} {
-							@each $rv in $range {
-								&#{delimiter()}#{n($rv)}#{$shorthand}-#{code-name(abs(if($percent, $rv * 100, $rv)))} {
-									@each $prop in $property {
-										#{$prop}: resolve($rv, $resolver);
-									}
-								}
-							}
+			@include FIXME-responsive {
+				@each $rv in $range {
+					&#{delimiter()}#{n($rv)}#{$shorthand}-#{code-name(abs(if($percent, $rv * 100, $rv)))} {
+						@each $prop in $property {
+							#{$prop}: resolve($rv, $resolver);
 						}
 					}
 				}
