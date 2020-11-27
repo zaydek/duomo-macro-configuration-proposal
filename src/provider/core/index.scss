@@ -1,8 +1,6 @@
-@forward "misc-z-index" as z-index-*;
-@forward "size-height" as height-*;
-@forward "size-width" as width-*;
-@forward "space-margin" as margin-*;
-@forward "space-padding" as padding-*;
+@forward "misc";
+@forward "size";
+@forward "space";
 
 // TODO: Add support for `exempt` or `none`.
 // TODO: Add support for `nrange`.
