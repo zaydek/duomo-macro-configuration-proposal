@@ -3,12 +3,34 @@
 @use "configuration";
 @use "escapers";
 
+// Ex:
+//
+// n(-1) -> "-"
+// n(0) -> ""
+//
+@function n($rv) {
+	@return if($rv < 0, "-", "");
+}
+
+// Ex:
+//
+// amp() -> .name { ... }
+// .sm\: { amp() } -> .sm:name { ... }
+//
+@function amp() {
+	@if not & {
+		@return ".";
+	}
+	@return & + delimiter();
+}
+
 @function delimiter() {
 	@return escapers.escape(configuration.$delimiter);
 }
 
 // TODO: Should this be configurable?
 // TODO: Add support for `%`, etc.
+//
 @function name($any) {
 	@if $any == 100% {
 		@return "max";
@@ -18,14 +40,22 @@
 	@return $any;
 }
 
+// Ex: nrange() -> (-1, -2, -4, -8, ...);
 @function nrange() {
 	@return configuration.$nrange;
 }
 
+// Ex: range() -> (0, 1, 2, 4, 8, ...);
 @function range() {
 	@return configuration.$range;
 }
 
+// Ex:
+//
+// breakpoint(xs) -> 512
+// breakpoint(sm) -> 640
+//
+// TODO: Make sure supports `sm` and `"sm"` use-case.
 @function breakpoint($key) {
 	$got: map.get(configuration.$breakpoint-map, $key);
 	@if not $got {
@@ -34,6 +64,15 @@
 	@return $got;
 }
 
+// Ex:
+//
+// breakpoints()
+// -> (
+// ->   "xs\:": 512,
+// ->   "sm\:": 640,
+// ->   ...
+// -> )
+//
 @function breakpoints() {
 	$map: ();
 	@each $key, $n in configuration.$breakpoint-map {

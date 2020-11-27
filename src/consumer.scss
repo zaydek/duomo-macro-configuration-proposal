@@ -1,6 +1,9 @@
-@use "provider" as *; // with (
-// 	$headless: true
-// );
+@use "sass:list";
+@use "sass:math";
+
+@use "provider" as * with (
+	$headless: true
+);
 
 // // User story:
 // @at-root {
@@ -22,26 +25,24 @@
 // 	}
 // }
 
-// // User story (advanced):
-// @mixin polyfill {
-// 	$ampersand: if(not &, ".", & + delimiter());
-//
-// 	@each $rv in range() {
-// 		#{$ampersand}w-#{$rv} {
-// 			width: rem($rv);
-// 		}
-// 	}
-// }
-//
-// @at-root {
-// 	@include polyfill;
-// 	@each $key, $n in breakpoints() {
-// 		@media (min-width: px($n)) {
-// 			.#{$key} {
-// 				@at-root {
-// 					@include polyfill;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+// User story (advanced):
+@mixin polyfill {
+	@each $rv in list.join(nrange(), range()) {
+		#{amp()}#{n($rv)}w-#{math.abs($rv)} {
+			width: rem($rv);
+		}
+	}
+}
+
+@at-root {
+	@include polyfill;
+	@each $key, $n in breakpoints() {
+		@media (min-width: px($n)) {
+			.#{$key} {
+				@at-root {
+					@include polyfill;
+				}
+			}
+		}
+	}
+}
