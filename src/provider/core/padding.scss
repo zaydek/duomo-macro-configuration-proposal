@@ -7,7 +7,6 @@ $-opts: (
 	(
 		shorthand: p,
 		property: padding,
-		type: range,
 		range: range(),
 		resolver: rem,
 		variants: (responsive),
@@ -15,7 +14,6 @@ $-opts: (
 	(
 		shorthand: px,
 		property: (padding-left, padding-right),
-		type: range,
 		range: range(),
 		resolver: rem,
 		variants: (responsive),
@@ -23,7 +21,6 @@ $-opts: (
 	(
 		shorthand: py,
 		property: (padding-top, padding-bottom),
-		type: range,
 		range: range(),
 		resolver: rem,
 		variants: (responsive),
@@ -31,7 +28,6 @@ $-opts: (
 	(
 		shorthand: pt,
 		property: padding-top,
-		type: range,
 		range: range(),
 		resolver: rem,
 		variants: (responsive),
@@ -39,7 +35,6 @@ $-opts: (
 	(
 		shorthand: pr,
 		property: padding-right,
-		type: range,
 		range: range(),
 		resolver: rem,
 		variants: (responsive),
@@ -47,7 +42,6 @@ $-opts: (
 	(
 		shorthand: pb,
 		property: padding-bottom,
-		type: range,
 		range: range(),
 		resolver: rem,
 		variants: (responsive),
@@ -55,7 +49,6 @@ $-opts: (
 	(
 		shorthand: pl,
 		property: padding-left,
-		type: range,
 		range: range(),
 		resolver: rem,
 		variants: (responsive),

@@ -7,7 +7,6 @@ $-opts: (
 	(
 		shorthand: m,
 		property: margin,
-		type: range,
 		range: var-join(
 			nrange(),
 			auto,
@@ -19,7 +18,6 @@ $-opts: (
 	(
 		shorthand: mx,
 		property: (margin-left, margin-right),
-		type: range,
 		range: var-join(
 			nrange(),
 			auto,
@@ -31,7 +29,6 @@ $-opts: (
 	(
 		shorthand: my,
 		property: (margin-top, margin-bottom),
-		type: range,
 		range: var-join(
 			nrange(),
 			auto,
@@ -43,7 +40,6 @@ $-opts: (
 	(
 		shorthand: mt,
 		property: margin-top,
-		type: range,
 		range: var-join(
 			nrange(),
 			auto,
@@ -55,7 +51,6 @@ $-opts: (
 	(
 		shorthand: mr,
 		property: margin-right,
-		type: range,
 		range: var-join(
 			nrange(),
 			auto,
@@ -67,7 +62,6 @@ $-opts: (
 	(
 		shorthand: mb,
 		property: margin-bottom,
-		type: range,
 		range: var-join(
 			nrange(),
 			auto,
@@ -79,7 +73,6 @@ $-opts: (
 	(
 		shorthand: ml,
 		property: margin-left,
-		type: range,
 		range: var-join(
 			nrange(),
 			auto,

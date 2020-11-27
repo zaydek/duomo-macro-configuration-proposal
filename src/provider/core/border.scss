@@ -7,7 +7,6 @@ $-opts: (
 	(
 		shorthand: border,
 		property: border-width,
-		type: range,
 		range: cap(range(), 8),
 		resolver: rem,
 		variants: (responsive),
@@ -15,7 +14,6 @@ $-opts: (
 	(
 		shorthand: border-t,
 		property: border-top-width,
-		type: range,
 		range: cap(range(), 8),
 		resolver: rem,
 		variants: (responsive),
@@ -23,7 +21,6 @@ $-opts: (
 	(
 		shorthand: border-r,
 		property: border-right-width,
-		type: range,
 		range: cap(range(), 8),
 		resolver: rem,
 		variants: (responsive),
@@ -31,7 +28,6 @@ $-opts: (
 	(
 		shorthand: border-b,
 		property: border-bottom-width,
-		type: range,
 		range: cap(range(), 8),
 		resolver: rem,
 		variants: (responsive),
@@ -39,7 +35,6 @@ $-opts: (
 	(
 		shorthand: border-l,
 		property: border-left-width,
-		type: range,
 		range: cap(range(), 8),
 		resolver: rem,
 		variants: (responsive),
@@ -47,7 +42,6 @@ $-opts: (
 	(
 		shorthand: radius,
 		property: (border-radius),
-		type: range,
 		range: var-join(
 			cap(range(), 24),
 			9999px,
@@ -58,7 +52,6 @@ $-opts: (
 	(
 		shorthand: radius-t,
 		property: (border-top-left-radius, border-top-right-radius),
-		type: range,
 		range: var-join(
 			cap(range(), 24),
 			9999px,
@@ -69,7 +62,6 @@ $-opts: (
 	(
 		shorthand: radius-r,
 		property: (border-top-right-radius, border-bottom-right-radius),
-		type: range,
 		range: var-join(
 			cap(range(), 24),
 			9999px,
@@ -80,7 +72,6 @@ $-opts: (
 	(
 		shorthand: radius-b,
 		property: (border-bottom-left-radius, border-bottom-right-radius),
-		type: range,
 		range: var-join(
 			cap(range(), 24),
 			9999px,
@@ -91,7 +82,6 @@ $-opts: (
 	(
 		shorthand: radius-l,
 		property: (border-top-left-radius, border-bottom-left-radius),
-		type: range,
 		range: var-join(
 			cap(range(), 24),
 			9999px,
@@ -102,7 +92,6 @@ $-opts: (
 	(
 		shorthand: radius-tr,
 		property: (border-top-right-radius),
-		type: range,
 		range: var-join(
 			cap(range(), 24),
 			9999px,
@@ -113,7 +102,6 @@ $-opts: (
 	(
 		shorthand: radius-br,
 		property: (border-bottom-right-radius),
-		type: range,
 		range: var-join(
 			cap(range(), 24),
 			9999px,
@@ -124,7 +112,6 @@ $-opts: (
 	(
 		shorthand: radius-bl,
 		property: (border-bottom-left-radius),
-		type: range,
 		range: var-join(
 			cap(range(), 24),
 			9999px,
@@ -135,7 +122,6 @@ $-opts: (
 	(
 		shorthand: radius-tl,
 		property: (border-top-left-radius),
-		type: range,
 		range: var-join(
 			cap(range(), 24),
 			9999px,

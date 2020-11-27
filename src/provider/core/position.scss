@@ -7,7 +7,6 @@ $-opts: (
 	(
 		shorthand: a,
 		property: (top, right, bottom, left),
-		type: range,
 		range: 0,
 		resolver: rem,
 		variants: (responsive),
@@ -15,7 +14,6 @@ $-opts: (
 	(
 		shorthand: x,
 		property: (left, right),
-		type: range,
 		range: 0,
 		resolver: rem,
 		variants: (responsive),
@@ -23,7 +21,6 @@ $-opts: (
 	(
 		shorthand: y,
 		property: (top, bottom),
-		type: range,
 		range: 0,
 		resolver: rem,
 		variants: (responsive),
@@ -31,7 +28,6 @@ $-opts: (
 	(
 		shorthand: l,
 		property: left,
-		type: range,
 		range: range(),
 		resolver: rem,
 		variants: (responsive),
@@ -39,7 +35,6 @@ $-opts: (
 	(
 		shorthand: r,
 		property: right,
-		type: range,
 		range: range(),
 		resolver: rem,
 		variants: (responsive),
@@ -47,7 +42,6 @@ $-opts: (
 	(
 		shorthand: t,
 		property: top,
-		type: range,
 		range: range(),
 		resolver: rem,
 		variants: (responsive),
@@ -55,7 +49,6 @@ $-opts: (
 	(
 		shorthand: b,
 		property: bottom,
-		type: range,
 		range: range(),
 		resolver: rem,
 		variants: (responsive),
@@ -63,7 +56,6 @@ $-opts: (
 	(
 		shorthand: tr,
 		property: (top, right),
-		type: range,
 		range: 0,
 		resolver: rem,
 		variants: (responsive),
@@ -71,7 +63,6 @@ $-opts: (
 	(
 		shorthand: br,
 		property: (bottom, right),
-		type: range,
 		range: 0,
 		resolver: rem,
 		variants: (responsive),
@@ -79,7 +70,6 @@ $-opts: (
 	(
 		shorthand: bl,
 		property: (bottom, left),
-		type: range,
 		range: 0,
 		resolver: rem,
 		variants: (responsive),
@@ -87,7 +77,6 @@ $-opts: (
 	(
 		shorthand: tl,
 		property: (top, left),
-		type: range,
 		range: 0,
 		resolver: rem,
 		variants: (responsive),
