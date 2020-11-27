@@ -48,7 +48,7 @@
 		// TODO
 		@if $type == range {
 			@each $rv in $range {
-				#{amp()}#{n($rv)}#{$shorthand}-#{ident(abs(if($percent, $rv * 100, $rv)))} {
+				#{amp()}#{n($rv)}#{$shorthand}-#{code-name(abs(if($percent, $rv * 100, $rv)))} {
 					@each $prop in $property {
 						#{$prop}: resolve($rv, $resolver);
 					}

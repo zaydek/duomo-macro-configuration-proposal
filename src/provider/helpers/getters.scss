@@ -32,19 +32,15 @@
 	@return escapers.escape(configuration.$delimiter);
 }
 
-// TODO: Should this be configurable?
-// TODO: Add support for `%`, etc.
-// TODO: Come up with a better name.
-@function ident($any) {
-	@if $any == 100% {
-		@return "max";
-	} @else if $any == 100vw or $any == 100vh {
-		@return "screen";
-	}
-
-	@if type-of($any) == "number" and $any > 0 and $any < 1 {
-		$n: $any;
-		@return $n * 100;
+@function code-name($any) {
+	// prettier-ignore
+	$got: map.get((
+		100%: max,
+		100vw: screen,
+		100vh: screen,
+	), $any);
+	@if $got {
+		@return $got;
 	}
 	@return $any;
 }
