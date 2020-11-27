@@ -18,8 +18,8 @@
 // (0, 0.5, 1)  -> true
 // (0, 50, 100) -> false
 //
-@function percent-heuristic($type, $range) {
-	$ok: $type == range and type-of(list.nth($range, 1)) == "number" and list.nth($range, 1) >= 0 and
+@function percent-heuristic($range) {
+	$ok: $range and type-of(list.nth($range, 1)) == "number" and list.nth($range, 1) >= 0 and
 		type-of(list.nth($range, -1)) == "number" and list.nth($range, -1) <= 1;
 	@return $ok;
 }
@@ -33,16 +33,15 @@
 			map.get($opt, shorthand),
 		);
 		$property: map.get($opt, property);
-		$type: map.get($opt, type);
 		$range: map.get($opt, range);
 		$resolver: map.get($opt, resolver);
 		$breakpoints: map.get($opt, breakpoints);
 		$variants: map.get($opt, variants);
 
 		// Computed:
-		$percent: percent-heuristic($type, $range);
+		$percent: percent-heuristic($range);
 
-		@if $type == range {
+		@if $range {
 			@each $rv in $range {
 				.#{n($rv)}#{$shorthand}-#{code-name(abs(if($percent, $rv * 100, $rv)))} {
 					@each $prop in $property {
