@@ -1,6 +1,8 @@
 @use "sass:map";
 
 @use "core/width";
+@use "getters";
+@use "resolvers";
 
 // TODO: Add `$headless` option here?
 @mixin build($options) {
@@ -16,6 +18,20 @@
 		@each $rv in $range {
 			.#{$shorthand}-#{$rv} {
 				#{$property}: $rv;
+			}
+		}
+	}
+	@each $k, $v in getters.breakpoints() {
+		@media (min-width: resolvers.px($v)) {
+			.#{$k} {
+				@if $type == range {
+					@each $rv in $range {
+						// TODO: Change `\:`.
+						&\:#{$shorthand}-#{$rv} {
+							#{$property}: resolvers.resolve($rv, $resolver);
+						}
+					}
+				}
 			}
 		}
 	}
