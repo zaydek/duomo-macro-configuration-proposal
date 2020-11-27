@@ -5,6 +5,14 @@
 // prettier-ignore
 $-opts: (
 	(
+		shorthand: a,
+		property: (top, right, bottom, left),
+		type: range,
+		range: 0,
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
 		shorthand: x,
 		property: (left, right),
 		type: range,
@@ -49,14 +57,6 @@ $-opts: (
 		property: bottom,
 		type: range,
 		range: range(),
-		resolver: rem,
-		variants: (responsive),
-	),
-	(
-		shorthand: a,
-		property: (top, right, bottom, left),
-		type: range,
-		range: 0,
 		resolver: rem,
 		variants: (responsive),
 	),
