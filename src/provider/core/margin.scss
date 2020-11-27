@@ -1,0 +1,89 @@
+@use "../constructor" as *;
+
+@use "../getters";
+@use "../utils";
+
+// prettier-ignore
+$__opts: (
+	(
+		shorthand: m,
+		property: margin,
+		type: range,
+		range: utils.var-join(
+			auto,
+			getters.nrange(),
+			getters.range(),
+		),
+		resolver: rem,
+	),
+	(
+		shorthand: mx,
+		property: (margin-left, margin-right),
+		type: range,
+		range: utils.var-join(
+			auto,
+			getters.nrange(),
+			getters.range(),
+		),
+		resolver: rem,
+	),
+	(
+		shorthand: my,
+		property: (margin-top, margin-bottom),
+		type: range,
+		range: utils.var-join(
+			auto,
+			getters.nrange(),
+			getters.range(),
+		),
+		resolver: rem,
+	),
+	(
+		shorthand: mt,
+		property: margin-top,
+		type: range,
+		range: utils.var-join(
+			auto,
+			getters.nrange(),
+			getters.range(),
+		),
+		resolver: rem,
+	),
+	(
+		shorthand: mr,
+		property: margin-right,
+		type: range,
+		range: utils.var-join(
+			auto,
+			getters.nrange(),
+			getters.range(),
+		),
+		resolver: rem,
+	),
+	(
+		shorthand: mb,
+		property: margin-bottom,
+		type: range,
+		range: utils.var-join(
+			auto,
+			getters.nrange(),
+			getters.range(),
+		),
+		resolver: rem,
+	),
+	(
+		shorthand: ml,
+		property: margin-left,
+		type: range,
+		range: utils.var-join(
+			auto,
+			getters.nrange(),
+			getters.range(),
+		),
+		resolver: rem,
+	),
+);
+
+@mixin margin {
+	@include constructor($__opts);
+}

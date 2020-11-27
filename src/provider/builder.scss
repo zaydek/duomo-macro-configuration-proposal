@@ -1,0 +1,25 @@
+@use "getters" as *;
+@use "resolvers" as *;
+
+@use "configuration";
+@use "core";
+
+@mixin props {
+	@include core.margin;
+	// ...
+}
+
+@at-root {
+	@if configuration.$headless == false {
+		@include props;
+		@each $key, $n in breakpoints() {
+			@media (min-width: px($n)) {
+				.#{$key} {
+					@at-root {
+						@include props;
+					}
+				}
+			}
+		}
+	}
+}
