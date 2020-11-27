@@ -1,6 +1,6 @@
-//
-// Top-level settings
-//
+// ========================
+// == Top-level settings ==
+// ========================
 
 // TODO: Change configuration mechanism.
 
@@ -16,12 +16,13 @@ $debugger: true !default;
 // Describes whether to generate stagger utilities.
 $stagger: true !default;
 
-//
-// Ranges
-//
+// Used for pseudos and breakpoints.
+$delimiter: ":" !default;
 
-// TODO: Add getter for `nrange()`.
-//
+// ============
+// == Ranges ==
+// ============
+
 // prettier-ignore
 $nrange: (
 	-1,
@@ -30,8 +31,6 @@ $nrange: (
 	-8,
 );
 
-// TODO: Add getter for `range()`.
-//
 // prettier-ignore
 $range: (
 	1,
@@ -40,11 +39,9 @@ $range: (
 	8,
 );
 
-//
-// Breakpoints
-//
-
-$breakpoint-delimiter: ":";
+// =================
+// == Breakpoints ==
+// =================
 
 // prettier-ignore
 $breakpoint-map: (

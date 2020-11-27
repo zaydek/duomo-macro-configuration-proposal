@@ -8,7 +8,7 @@
 @use "resolvers";
 
 @mixin build($options) {
-	$breakpoint-delimiter: escapers.escape(configuration.$breakpoint-delimiter);
+	$delimiter: escapers.escape(configuration.$delimiter);
 
 	$shorthand: map.get($options, shorthand);
 	$property: map.get($options, property);
@@ -30,7 +30,7 @@
 			.#{$key} {
 				@if $type == range {
 					@each $rv in $range {
-						&#{$breakpoint-delimiter}#{$shorthand}-#{getters.semantic($rv)} {
+						&#{$delimiter}#{$shorthand}-#{getters.semantic($rv)} {
 							#{$property}: resolvers.resolve($rv, $resolver);
 						}
 					}
