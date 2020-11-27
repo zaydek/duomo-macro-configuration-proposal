@@ -1,11 +1,23 @@
 @use "sass:map";
-
-@use "core/width";
+@use "sass:math";
 
 @use "configuration";
 @use "escapers";
 @use "getters";
 @use "resolvers";
+
+@use "core/width";
+
+@function n($rv) {
+	@return if($rv < 0, "-", "");
+}
+
+@function amp() {
+	@if not & {
+		@return ".";
+	}
+	@return & + getters.delimiter();
+}
 
 @mixin build($options) {
 	$shorthand: map.get($options, shorthand);
@@ -18,21 +30,8 @@
 
 	@if $type == range {
 		@each $rv in $range {
-			.#{$shorthand}-#{getters.name($rv)} {
+			#{amp()}#{n($rv)}#{$shorthand}-#{getters.name(math.abs($rv))} {
 				#{$property}: resolvers.resolve($rv, $resolver);
-			}
-		}
-	}
-	@each $key, $n in getters.breakpoints() {
-		@media (min-width: resolvers.px($n)) {
-			.#{$key} {
-				@if $type == range {
-					@each $rv in $range {
-						&#{getters.delimiter()}#{$shorthand}-#{getters.name($rv)} {
-							#{$property}: resolvers.resolve($rv, $resolver);
-						}
-					}
-				}
 			}
 		}
 	}
@@ -41,5 +40,14 @@
 @at-root {
 	@if configuration.$headless == false {
 		@include build(width.$options);
+		@each $key, $n in getters.breakpoints() {
+			@media (min-width: resolvers.px($n)) {
+				.#{$key} {
+					@at-root {
+						@include build(width.$options);
+					}
+				}
+			}
+		}
 	}
 }

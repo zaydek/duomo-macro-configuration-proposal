@@ -8,6 +8,7 @@
 }
 
 // TODO: Should this be configurable?
+// TODO: Add support for `%`, etc.
 @function name($any) {
 	@if $any == 100% {
 		@return "max";
@@ -20,6 +21,7 @@
 @function nrange() {
 	@return configuration.$nrange;
 }
+
 @function range() {
 	@return configuration.$range;
 }
@@ -31,6 +33,7 @@
 	}
 	@return $got;
 }
+
 @function breakpoints() {
 	$map: ();
 	@each $key, $n in configuration.$breakpoint-map {
