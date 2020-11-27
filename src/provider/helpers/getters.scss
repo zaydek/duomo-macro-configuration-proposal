@@ -16,18 +16,19 @@
 	@return if($rv < 0, "-", "");
 }
 
-// Ex:
-//
-// amp() -> .name { ... }
-// .sm\: { amp() } -> .sm:name { ... }
-//
-@function amp() {
-	@if not & {
-		@return ".";
-	}
-	@return & + delimiter();
-}
+// // Ex:
+// //
+// // amp() -> .name { ... }
+// // .sm\: { amp() } -> .sm:name { ... }
+// //
+// @function amp() {
+// 	@if not & {
+// 		@return ".";
+// 	}
+// 	@return & + delimiter();
+// }
 
+// Ex: delimiter() -> "\:"
 @function delimiter() {
 	@return escapers.escape(configuration.$delimiter);
 }

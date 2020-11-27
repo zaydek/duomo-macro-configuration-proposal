@@ -58,19 +58,59 @@
 
 		@if $type == range {
 			@each $rv in $range {
-				#{amp()}#{n($rv)}#{$shorthand}-#{code-name(abs(if($percent, $rv * 100, $rv)))} {
+				.#{n($rv)}#{$shorthand}-#{code-name(abs(if($percent, $rv * 100, $rv)))} {
 					@each $prop in $property {
 						#{$prop}: resolve($rv, $resolver);
 					}
 				}
 			}
+
+			// (hover)
+			@if list.index($variants, hover) {
+				@each $rv in $range {
+					.group-hover:hover .#{n($rv)}#{$shorthand}-#{code-name(abs(if($percent, $rv * 100, $rv)))} {
+						@each $prop in $property {
+							#{$prop}: resolve($rv, $resolver);
+						}
+					}
+				}
+				@each $rv in $range {
+					.hover#{delimiter()}#{n($rv)}#{$shorthand}-#{code-name(abs(if($percent, $rv * 100, $rv)))}:hover {
+						@each $prop in $property {
+							#{$prop}: resolve($rv, $resolver);
+						}
+					}
+				}
+			}
+
+			// (focus)
+			@if list.index($variants, focus) {
+				@each $rv in $range {
+					.group-focus:focus .#{n($rv)}#{$shorthand}-#{code-name(abs(if($percent, $rv * 100, $rv)))} {
+						@each $prop in $property {
+							#{$prop}: resolve($rv, $resolver);
+						}
+					}
+				}
+				@each $rv in $range {
+					.focus#{delimiter()}#{n($rv)}#{$shorthand}-#{code-name(abs(if($percent, $rv * 100, $rv)))}:focus {
+						@each $prop in $property {
+							#{$prop}: resolve($rv, $resolver);
+						}
+					}
+				}
+			}
+
+			// (responsive)
 			@if list.index($variants, responsive) {
 				@each $key, $n in breakpoints() {
 					@media (min-width: px($n)) {
-						@each $rv in $range {
-							#{amp()}#{n($rv)}#{$shorthand}-#{code-name(abs(if($percent, $rv * 100, $rv)))} {
-								@each $prop in $property {
-									#{$prop}: resolve($rv, $resolver);
+						.#{$key} {
+							@each $rv in $range {
+								&#{delimiter()}#{n($rv)}#{$shorthand}-#{code-name(abs(if($percent, $rv * 100, $rv)))} {
+									@each $prop in $property {
+										#{$prop}: resolve($rv, $resolver);
+									}
 								}
 							}
 						}

@@ -16,7 +16,13 @@ $__opts: (
 		 50,
 	),
 	resolver: none,
-	variants: (responsive),
+	variants: (
+		responsive,
+		group-hover,
+		group-focus,
+		hover,
+		focus,
+	),
 );
 
 @mixin z-index {
