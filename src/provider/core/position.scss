@@ -1,99 +1,143 @@
-@use "../constructor" as *;
+@use "_variants" as *;
 @use "../helpers" as *;
 
 // prettier-ignore
-$-opts: (
-	(
-		shorthand: a,
-		property: (top, right, bottom, left),
-		range: 0,
-		resolver: rem,
-		variants: (responsive),
-	),
-	(
-		shorthand: x,
-		property: (left, right),
-		range: 0,
-		resolver: rem,
-		variants: (responsive),
-	),
-	(
-		shorthand: y,
-		property: (top, bottom),
-		range: 0,
-		resolver: rem,
-		variants: (responsive),
-	),
-	(
-		shorthand: l,
-		property: left,
-		range: var-join(
-			auto,
-			range(),
-		),
-		resolver: rem,
-		variants: (responsive),
-	),
-	(
-		shorthand: r,
-		property: right,
-		range: var-join(
-			auto,
-			range(),
-		),
-		resolver: rem,
-		variants: (responsive),
-	),
-	(
-		shorthand: t,
-		property: top,
-		range: var-join(
-			auto,
-			range(),
-		),
-		resolver: rem,
-		variants: (responsive),
-	),
-	(
-		shorthand: b,
-		property: bottom,
-		range: var-join(
-			auto,
-			range(),
-		),
-		resolver: rem,
-		variants: (responsive),
-	),
-	(
-		shorthand: tr,
-		property: (top, right),
-		range: 0,
-		resolver: rem,
-		variants: (responsive),
-	),
-	(
-		shorthand: br,
-		property: (bottom, right),
-		range: 0,
-		resolver: rem,
-		variants: (responsive),
-	),
-	(
-		shorthand: bl,
-		property: (bottom, left),
-		range: 0,
-		resolver: rem,
-		variants: (responsive),
-	),
-	(
-		shorthand: tl,
-		property: (top, left),
-		range: 0,
-		resolver: rem,
-		variants: (responsive),
-	),
+$-positions: (
+	static,
+	relative,
+	absolute,
+	fixed,
+	sticky,
 );
 
-@mixin position {
-	@include constructor($-opts);
+@mixin position($variants...) {
+	// prettier-ignore
+	@include variants($variants) using ($ctx, $pseudo) {
+		@each $each in $-positions {
+			#{$ctx}#{$each}#{$pseudo} {
+				position: $each;
+			}
+		}
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: a,
+			property: (top, right, bottom, left),
+			range: var-join(
+				auto,
+				0,
+			),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: x,
+			property: (left, right),
+			range: var-join(
+				auto,
+				0,
+			),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: y,
+			property: (top, bottom),
+			range: var-join(
+				auto,
+				0,
+			),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: t,
+			property: top,
+			range: var-join(
+				auto,
+				range(),
+			),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: r,
+			property: right,
+			range: var-join(
+				auto,
+				range(),
+			),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: b,
+			property: bottom,
+			range: var-join(
+				auto,
+				range(),
+			),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: l,
+			property: left,
+			range: var-join(
+				auto,
+				range(),
+			),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: tr,
+			property: (top, right),
+			range: var-join(
+				auto,
+				0,
+			),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: br,
+			property: (bottom, right),
+			range: var-join(
+				auto,
+				0,
+			),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: bl,
+			property: (bottom, left),
+			range: var-join(
+				auto,
+				0,
+			),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: tl,
+			property: (top, left),
+			range: var-join(
+				auto,
+				0,
+			),
+			resolver: rem,
+		));
+	}
 }

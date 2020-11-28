@@ -1,27 +1,15 @@
 @use "helpers" as *;
 
 @use "configuration";
+
 @use "core/box-shadow" as *;
 @use "core/margin" as *;
 @use "core/padding" as *;
-
-// @mixin lib {
-// 	@include core.group;
-// 	@include core.display;
-// 	@include core.position;
-// 	@include core.margin;
-// 	@include core.padding;
-// 	@include core.meta-square;
-// 	@include core.meta-circle;
-// 	@include core.width;
-// 	@include core.height;
-// 	@include core.border;
-// 	@include core.opacity;
-// 	@include core.z-index;
-// }
+@use "core/position" as *;
 
 @at-root {
 	@if configuration.$headless == false {
+		@include position(responsive);
 		@include margin(responsive);
 		@include padding(responsive);
 		@include box-shadow(responsive, hover, group-hover, focus, group-focus);
