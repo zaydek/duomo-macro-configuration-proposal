@@ -10,6 +10,7 @@
 @use "core/pointer-events" as *;
 @use "core/position" as *;
 @use "core/shape" as *;
+@use "core/z-index" as *;
 
 @at-root {
 	@if configuration.$headless == false {
@@ -20,6 +21,7 @@
 		// @include box-shadow(responsive, hover, group-hover, focus, group-focus);
 		// @include opacity(responsive, hover, group-hover, focus, group-focus);
 		// @include overflow(responsive);
-		@include pointer-events(responsive);
+		// @include pointer-events(responsive);
+		@include z-index(responsive, hover, group-hover, focus, group-focus);
 	}
 }

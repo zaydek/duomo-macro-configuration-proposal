@@ -1,53 +1,285 @@
-.pointer-events-auto {
-  pointer-events: auto;
+.-z-10 {
+  z-index: -10;
 }
 
-.pointer-events-none {
-  pointer-events: none;
+.z-0 {
+  z-index: 0;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.z-20 {
+  z-index: 20;
+}
+
+.z-30 {
+  z-index: 30;
+}
+
+.z-40 {
+  z-index: 40;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.hover\:-z-10:hover {
+  z-index: -10;
+}
+
+.hover\:z-0:hover {
+  z-index: 0;
+}
+
+.hover\:z-10:hover {
+  z-index: 10;
+}
+
+.hover\:z-20:hover {
+  z-index: 20;
+}
+
+.hover\:z-30:hover {
+  z-index: 30;
+}
+
+.hover\:z-40:hover {
+  z-index: 40;
+}
+
+.hover\:z-50:hover {
+  z-index: 50;
+}
+
+.focus\:-z-10:focus {
+  z-index: -10;
+}
+
+.focus\:z-0:focus {
+  z-index: 0;
+}
+
+.focus\:z-10:focus {
+  z-index: 10;
+}
+
+.focus\:z-20:focus {
+  z-index: 20;
+}
+
+.focus\:z-30:focus {
+  z-index: 30;
+}
+
+.focus\:z-40:focus {
+  z-index: 40;
+}
+
+.focus\:z-50:focus {
+  z-index: 50;
+}
+
+.group-hover:hover .group-hover\:-z-10 {
+  z-index: -10;
+}
+
+.group-hover:hover .group-hover\:z-0 {
+  z-index: 0;
+}
+
+.group-hover:hover .group-hover\:z-10 {
+  z-index: 10;
+}
+
+.group-hover:hover .group-hover\:z-20 {
+  z-index: 20;
+}
+
+.group-hover:hover .group-hover\:z-30 {
+  z-index: 30;
+}
+
+.group-hover:hover .group-hover\:z-40 {
+  z-index: 40;
+}
+
+.group-hover:hover .group-hover\:z-50 {
+  z-index: 50;
+}
+
+.group-focus:focus .group-focus\:-z-10 {
+  z-index: -10;
+}
+
+.group-focus:focus .group-focus\:z-0 {
+  z-index: 0;
+}
+
+.group-focus:focus .group-focus\:z-10 {
+  z-index: 10;
+}
+
+.group-focus:focus .group-focus\:z-20 {
+  z-index: 20;
+}
+
+.group-focus:focus .group-focus\:z-30 {
+  z-index: 30;
+}
+
+.group-focus:focus .group-focus\:z-40 {
+  z-index: 40;
+}
+
+.group-focus:focus .group-focus\:z-50 {
+  z-index: 50;
 }
 
 @media (min-width: 512px) {
-  .xs\:pointer-events-auto {
-    pointer-events: auto;
+  .xs\:-z-10 {
+    z-index: -10;
   }
 
-  .xs\:pointer-events-none {
-    pointer-events: none;
+  .xs\:z-0 {
+    z-index: 0;
+  }
+
+  .xs\:z-10 {
+    z-index: 10;
+  }
+
+  .xs\:z-20 {
+    z-index: 20;
+  }
+
+  .xs\:z-30 {
+    z-index: 30;
+  }
+
+  .xs\:z-40 {
+    z-index: 40;
+  }
+
+  .xs\:z-50 {
+    z-index: 50;
   }
 }
 @media (min-width: 640px) {
-  .sm\:pointer-events-auto {
-    pointer-events: auto;
+  .sm\:-z-10 {
+    z-index: -10;
   }
 
-  .sm\:pointer-events-none {
-    pointer-events: none;
+  .sm\:z-0 {
+    z-index: 0;
+  }
+
+  .sm\:z-10 {
+    z-index: 10;
+  }
+
+  .sm\:z-20 {
+    z-index: 20;
+  }
+
+  .sm\:z-30 {
+    z-index: 30;
+  }
+
+  .sm\:z-40 {
+    z-index: 40;
+  }
+
+  .sm\:z-50 {
+    z-index: 50;
   }
 }
 @media (min-width: 768px) {
-  .md\:pointer-events-auto {
-    pointer-events: auto;
+  .md\:-z-10 {
+    z-index: -10;
   }
 
-  .md\:pointer-events-none {
-    pointer-events: none;
+  .md\:z-0 {
+    z-index: 0;
+  }
+
+  .md\:z-10 {
+    z-index: 10;
+  }
+
+  .md\:z-20 {
+    z-index: 20;
+  }
+
+  .md\:z-30 {
+    z-index: 30;
+  }
+
+  .md\:z-40 {
+    z-index: 40;
+  }
+
+  .md\:z-50 {
+    z-index: 50;
   }
 }
 @media (min-width: 1024px) {
-  .lg\:pointer-events-auto {
-    pointer-events: auto;
+  .lg\:-z-10 {
+    z-index: -10;
   }
 
-  .lg\:pointer-events-none {
-    pointer-events: none;
+  .lg\:z-0 {
+    z-index: 0;
+  }
+
+  .lg\:z-10 {
+    z-index: 10;
+  }
+
+  .lg\:z-20 {
+    z-index: 20;
+  }
+
+  .lg\:z-30 {
+    z-index: 30;
+  }
+
+  .lg\:z-40 {
+    z-index: 40;
+  }
+
+  .lg\:z-50 {
+    z-index: 50;
   }
 }
 @media (min-width: 1280px) {
-  .xl\:pointer-events-auto {
-    pointer-events: auto;
+  .xl\:-z-10 {
+    z-index: -10;
   }
 
-  .xl\:pointer-events-none {
-    pointer-events: none;
+  .xl\:z-0 {
+    z-index: 0;
+  }
+
+  .xl\:z-10 {
+    z-index: 10;
+  }
+
+  .xl\:z-20 {
+    z-index: 20;
+  }
+
+  .xl\:z-30 {
+    z-index: 30;
+  }
+
+  .xl\:z-40 {
+    z-index: 40;
+  }
+
+  .xl\:z-50 {
+    z-index: 50;
   }
 }

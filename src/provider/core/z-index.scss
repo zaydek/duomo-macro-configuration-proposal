@@ -1,27 +1,24 @@
-@use "../constructor" as *;
+@use "_variants" as *;
 @use "../helpers" as *;
 
-// prettier-ignore
-$-opts: (
-	shorthand: z,
-	property: z-index,
-	type: range,
-	range: (
-		-10,
-		  0,
-		 10,
-		 20,
-		 30,
-		 40,
-		 50,
-	),
-	resolver: none,
-	variants: (
-		responsive,
-		focus,
-	),
-);
-
-@mixin z-index {
-	@include constructor($-opts);
+@mixin z-index($variants...) {
+	// prettier-ignore
+	@include variants($variants) using ($ctx, $pseudo) {
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: z,
+			property: z-index,
+			range: var-join(
+				-10,
+				  0,
+				 10,
+				 20,
+				 30,
+				 40,
+				 50,
+			),
+			resolver: none,
+		));
+	}
 }
