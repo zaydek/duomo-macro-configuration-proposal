@@ -1,0 +1,11 @@
+@use "../constructor" as *;
+@use "../helpers" as *;
+
+@mixin meta-square {
+	@each $rv in range() {
+		.square-#{$rv} {
+			width: resolve($rv, rem);
+			height: resolve($rv, rem);
+		}
+	}
+}

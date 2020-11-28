@@ -1,12 +1,12 @@
 @forward "border";
-// @forward "display";
 @forward "group";
 @forward "height";
 @forward "margin";
+@forward "meta-circle";
+@forward "meta-square";
 @forward "opacity";
 @forward "padding";
 @forward "position";
 @forward "width";
 @forward "z-index";
-
-// TODO: Deprecate `type: range`.
+// @forward "display";

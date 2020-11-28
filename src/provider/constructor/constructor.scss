@@ -46,10 +46,8 @@
 			// .a { ... }
 			@each $rv in $range {
 				.#{n($rv)}#{$shorthand}-#{desc(abs($rv), $use-percent)} {
-					@include mixins.hover {
-						@each $prop in $property {
-							#{$prop}: resolve($rv, $resolver);
-						}
+					@each $prop in $property {
+						#{$prop}: resolve($rv, $resolver);
 					}
 				}
 			}
