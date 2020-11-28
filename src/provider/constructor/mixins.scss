@@ -1,0 +1,54 @@
+@use "sass:string";
+
+@use "../helpers" as *;
+
+// Ex: drop-lead("Hello, world!") -> "ello, world!"
+@function drop-lead($any) {
+	@return string.slice("" + $any, 2);
+}
+
+// hover:a
+@mixin hover {
+	@at-root {
+		.hover\:#{drop-lead(&)}:hover {
+			@content;
+		}
+	}
+}
+
+// focus:a
+@mixin focus {
+	@at-root {
+		.focus\:#{drop-lead(&)}:focus {
+			@content;
+		}
+	}
+}
+
+// group-hover:a
+@mixin group-hover {
+	@at-root {
+		.group-hover:hover & {
+			@content;
+		}
+	}
+}
+
+// group-focus:a
+@mixin group-focus {
+	@at-root {
+		.group-focus:hover & {
+			@content;
+		}
+	}
+}
+
+@mixin responsive {
+	@each $key, $n in breakpoints() {
+		@media (min-width: px($n)) {
+			.#{delimit($key)} {
+				@content;
+			}
+		}
+	}
+}

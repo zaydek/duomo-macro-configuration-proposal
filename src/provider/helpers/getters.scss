@@ -38,7 +38,12 @@
 	@return & + delimiter();
 }
 
-@function code-name($any) {
+// Ex:
+//
+// desc(100%)  -> max
+// desc(100vw) -> screen
+//
+@function desc($any, $use-percent: false) {
 	// prettier-ignore
 	$got: map.get((
 		100%: max,
@@ -48,6 +53,10 @@
 	), $any);
 	@if $got {
 		@return $got;
+	}
+	@if type-of($any) == "number" and $use-percent {
+		$rv: $any;
+		@return $rv * 100;
 	}
 	@return $any;
 }
