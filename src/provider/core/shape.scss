@@ -1,0 +1,22 @@
+@use "_variants" as *;
+@use "../helpers" as *;
+
+@mixin shape($variants...) {
+	@include variants($variants) using ($ctx, $pseudo) {
+		@each $rv in range() {
+			#{$ctx}square-#{$rv}#{$pseudo} {
+				width: resolve($rv, rem);
+				height: resolve($rv, rem);
+			}
+		}
+	}
+	@include variants($variants) using ($ctx, $pseudo) {
+		@each $rv in range() {
+			#{$ctx}circle-#{$rv}#{$pseudo} {
+				width: resolve($rv, rem);
+				height: resolve($rv, rem);
+				border-radius: 9999px;
+			}
+		}
+	}
+}
