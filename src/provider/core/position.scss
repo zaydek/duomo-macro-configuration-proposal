@@ -28,7 +28,6 @@ $-opts: (
 		shorthand: l,
 		property: left,
 		range: var-join(
-			nrange(),
 			auto,
 			range(),
 		),
@@ -39,7 +38,6 @@ $-opts: (
 		shorthand: r,
 		property: right,
 		range: var-join(
-			nrange(),
 			auto,
 			range(),
 		),
@@ -50,7 +48,6 @@ $-opts: (
 		shorthand: t,
 		property: top,
 		range: var-join(
-			nrange(),
 			auto,
 			range(),
 		),
@@ -61,7 +58,6 @@ $-opts: (
 		shorthand: b,
 		property: bottom,
 		range: var-join(
-			nrange(),
 			auto,
 			range(),
 		),
