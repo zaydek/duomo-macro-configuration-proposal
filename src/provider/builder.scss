@@ -4,18 +4,18 @@
 @use "core";
 
 @mixin lib {
-	@include core.group;
-	// @include core.display;
-	@include core.position;
-	@include core.margin;
-	@include core.padding;
-	@include core.meta-square;
-	@include core.meta-circle;
-	@include core.width;
-	@include core.height;
-	@include core.border;
-	@include core.opacity;
-	@include core.z-index;
+	// @include core.group;
+	@include core.display;
+	// @include core.position;
+	// @include core.margin;
+	// @include core.padding;
+	// @include core.meta-square;
+	// @include core.meta-circle;
+	// @include core.width;
+	// @include core.height;
+	// @include core.border;
+	// @include core.opacity;
+	// @include core.z-index;
 }
 
 @at-root {

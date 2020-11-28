@@ -35,17 +35,28 @@
 	@return $floored + px;
 }
 
+// @function passthrough($any) {
+// 	// prettier-ignore
+// 	$ret:
+// 		$any == auto or
+// 		$any == min-content or
+// 		$any == max-content or
+// 		utils.has-suffix($any, "%") or
+// 		utils.has-suffix($any, "vw") or
+// 		utils.has-suffix($any, "vh") or
+// 		$any == 9999px;
+// 	@return $ret;
+// }
+
 @function passthrough($any) {
 	// prettier-ignore
-	$ret:
-		$any == auto or
-		$any == min-content or
-		$any == max-content or
+	$ok:
+		type-of($any) != "number" or
 		utils.has-suffix($any, "%") or
 		utils.has-suffix($any, "vw") or
 		utils.has-suffix($any, "vh") or
 		$any == 9999px;
-	@return $ret;
+	@return $ok;
 }
 
 @function resolve($any, $resolver) {

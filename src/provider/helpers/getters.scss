@@ -26,17 +26,17 @@
 	@return $key + delimiter();
 }
 
-// Ex:
-//
-// amp() -> .name { ... }
-// .sm\: { amp() } -> .sm:name { ... }
-//
-@function amp() {
-	@if not & {
-		@return ".";
-	}
-	@return & + delimiter();
-}
+// // Ex:
+// //
+// // amp() -> .name { ... }
+// // .sm\: { amp() } -> .sm:name { ... }
+// //
+// @function amp() {
+// 	@if not & {
+// 		@return ".";
+// 	}
+// 	@return & + delimiter();
+// }
 
 // Ex:
 //
