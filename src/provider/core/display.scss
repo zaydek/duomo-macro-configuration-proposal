@@ -1,24 +1,16 @@
 @use "../constructor" as *;
 @use "../helpers" as *;
 
-// // TODO: `variants: (responsive)`
-// @mixin display {
-// 	@include -impl;
-// 	@include responsive {
-// 		@include -impl;
-// 	}
-// }
-
 // prettier-ignore
 $-opts: (
-	shorthand: dis,
+	shorthand: none,
 	property: display,
 	map: (
 		visible: block,
 		invisible: hidden,
 	),
 	resolver: none,
-	variants: (responsive, hover, focus),
+	variants: (responsive),
 );
 
 @mixin display {
