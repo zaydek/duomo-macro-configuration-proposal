@@ -7,6 +7,7 @@
 @use "core/box-shadow" as *;
 @use "core/container" as *;
 @use "core/display" as *;
+@use "core/grid" as *;
 @use "core/height" as *;
 @use "core/margin" as *;
 @use "core/max-width" as *;
@@ -23,6 +24,8 @@
 
 @at-root {
 	@if configuration.$headless == false {
+		@include grid(responsive);
+
 		// @include display(responsive);
 		// @include position(responsive);
 		// @include margin(responsive);
@@ -31,7 +34,7 @@
 		// @include max-width(responsive);
 		// @include container;
 		// @include height(responsive);
-		@include min-height(responsive);
+		// @include min-height(responsive);
 		// @include shape();
 		// @include border-width(responsive);
 		// @include border-radius(responsive);
