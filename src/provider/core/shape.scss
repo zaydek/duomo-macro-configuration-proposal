@@ -9,8 +9,6 @@
 				height: resolve($rv, rem);
 			}
 		}
-	}
-	@include variants($variants) using ($ctx, $pseudo) {
 		@each $rv in range() {
 			#{$ctx}circle-#{$rv}#{$pseudo} {
 				width: resolve($rv, rem);

@@ -1,0 +1,37 @@
+@use "_variants" as *;
+@use "../helpers" as *;
+
+// prettier-ignore
+$-opts: (
+	hidden,
+	scroll,
+);
+
+@mixin overflow($variants...) {
+	@include variants($variants) using ($ctx, $pseudo) {
+		@each $each in $-opts {
+			#{$ctx}overflow-#{$each}#{$pseudo} {
+				@if $each == scroll {
+					-webkit-overflow-scrolling: touch;
+				}
+				overflow: $each;
+			}
+		}
+		@each $each in $-opts {
+			#{$ctx}overflow-x-#{$each}#{$pseudo} {
+				@if $each == scroll {
+					-webkit-overflow-scrolling: touch;
+				}
+				overflow-x: $each;
+			}
+		}
+		@each $each in $-opts {
+			#{$ctx}overflow-y-#{$each}#{$pseudo} {
+				@if $each == scroll {
+					-webkit-overflow-scrolling: touch;
+				}
+				overflow-y: $each;
+			}
+		}
+	}
+}

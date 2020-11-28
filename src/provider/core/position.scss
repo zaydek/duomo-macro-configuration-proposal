@@ -2,7 +2,7 @@
 @use "../helpers" as *;
 
 // prettier-ignore
-$-positions: (
+$-opts: (
 	static,
 	relative,
 	absolute,
@@ -13,7 +13,7 @@ $-positions: (
 @mixin position($variants...) {
 	// prettier-ignore
 	@include variants($variants) using ($ctx, $pseudo) {
-		@each $each in $-positions {
+		@each $each in $-opts {
 			#{$ctx}#{$each}#{$pseudo} {
 				position: $each;
 			}

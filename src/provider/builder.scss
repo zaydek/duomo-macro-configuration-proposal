@@ -5,6 +5,7 @@
 @use "core/box-shadow" as *;
 @use "core/margin" as *;
 @use "core/opacity" as *;
+@use "core/overflow" as *;
 @use "core/padding" as *;
 @use "core/position" as *;
 @use "core/shape" as *;
@@ -13,9 +14,10 @@
 	@if configuration.$headless == false {
 		// @include position(responsive);
 		// @include margin(responsive);
-		@include shape();
+		// @include shape();
 		// @include padding(responsive);
 		// @include box-shadow(responsive, hover, group-hover, focus, group-focus);
 		// @include opacity(responsive, hover, group-hover, focus, group-focus);
+		@include overflow(responsive);
 	}
 }
