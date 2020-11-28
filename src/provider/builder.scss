@@ -3,6 +3,7 @@
 @use "configuration";
 
 @use "core/box-shadow" as *;
+@use "core/height" as *;
 @use "core/margin" as *;
 @use "core/opacity" as *;
 @use "core/overflow" as *;
@@ -10,18 +11,21 @@
 @use "core/pointer-events" as *;
 @use "core/position" as *;
 @use "core/shape" as *;
+@use "core/width" as *;
 @use "core/z-index" as *;
 
 @at-root {
 	@if configuration.$headless == false {
 		// @include position(responsive);
 		// @include margin(responsive);
+		@include width(responsive);
+		@include height(responsive);
 		// @include shape();
 		// @include padding(responsive);
 		// @include box-shadow(responsive, hover, group-hover, focus, group-focus);
 		// @include opacity(responsive, hover, group-hover, focus, group-focus);
 		// @include overflow(responsive);
 		// @include pointer-events(responsive);
-		@include z-index(responsive, hover, group-hover, focus, group-focus);
+		// @include z-index(responsive, hover, group-hover, focus, group-focus);
 	}
 }

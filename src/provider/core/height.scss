@@ -1,23 +1,23 @@
-@use "../constructor" as *;
+@use "_variants" as *;
 @use "../helpers" as *;
 
-// prettier-ignore
-$-opts: (
-	shorthand: h,
-	property: height,
-	type: range,
-	range: var-join(
-		auto,
-		range(),
-		min-content,
-		max-content,
-		100%,
-		100vh,
-	),
-	resolver: rem,
-	variants: (responsive),
-);
-
-@mixin height {
-	@include constructor($-opts);
+@mixin height($variants...) {
+	// prettier-ignore
+	@include variants($variants) using ($ctx, $pseudo) {
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: h,
+			property: height,
+			range: var-join(
+				auto,
+				range(),
+				min-content,
+				max-content,
+				100%,
+				100vh,
+			),
+			resolver: rem,
+		));
+	}
 }
