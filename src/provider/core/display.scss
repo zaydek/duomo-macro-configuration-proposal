@@ -1,20 +1,14 @@
 @use "_variants" as *;
 @use "../helpers" as *;
 
+// TODO: Rename values.
 @mixin display($variants...) {
-	// prettier-ignore
 	@include variants($variants) using ($ctx, $pseudo) {
-		@include generate-from-map((
-			ctx: $ctx,
-			pseudo: $pseudo,
-			shorthand: none,
-			property: (display),
-			// TODO
-			map: (
-				invisible: hidden,
-				visible: block,
-			),
-			resolver: none,
-		));
+		#{$ctx}invisible#{$pseudo} {
+			display: none;
+		}
+		#{$ctx}visible#{$pseudo} {
+			display: block;
+		}
 	}
 }

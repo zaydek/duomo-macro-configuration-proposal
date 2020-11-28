@@ -1,0 +1,26 @@
+// @use "sass:map";
+//
+// @use "getters" as *;
+// @use "resolvers" as *;
+//
+// // prettier-ignore
+// @mixin generate-from-map($info-map) {
+// 	$ctx:       map.get($info-map, ctx);
+// 	$pseudo:    map.get($info-map, pseudo);
+// 	$shorthand: map.get($info-map, shorthand);
+// 	$property:  map.get($info-map, property);
+// 	$map:       map.get($info-map, map);
+// 	$resolver:  map.get($info-map, resolver);
+//
+// 	// Computed:
+// 	$shorthand: if(map.get($info-map, shorthand) == none, "", map.get($map-opt, shorthand) + "-");
+//
+// 	// TODO: Use `#{escape($mk)}`?
+// 	@each $mk, $mv in $map {
+// 		#{$ctx}#{$shorthand}#{$mv}#{$pseudo} {
+// 			@each $prop in $property {
+// 				#{$prop}: resolve($mv, $resolver);
+// 			}
+// 		}
+// 	}
+// }

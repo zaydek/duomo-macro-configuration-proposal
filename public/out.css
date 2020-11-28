@@ -1,53 +1,53 @@
-.hidden {
-  display: hidden;
+.invisible {
+  display: none;
 }
 
-.block {
+.visible {
   display: block;
 }
 
 @media (min-width: 512px) {
-  .xs\:hidden {
-    display: hidden;
+  .xs\:invisible {
+    display: none;
   }
 
-  .xs\:block {
+  .xs\:visible {
     display: block;
   }
 }
 @media (min-width: 640px) {
-  .sm\:hidden {
-    display: hidden;
+  .sm\:invisible {
+    display: none;
   }
 
-  .sm\:block {
+  .sm\:visible {
     display: block;
   }
 }
 @media (min-width: 768px) {
-  .md\:hidden {
-    display: hidden;
+  .md\:invisible {
+    display: none;
   }
 
-  .md\:block {
+  .md\:visible {
     display: block;
   }
 }
 @media (min-width: 1024px) {
-  .lg\:hidden {
-    display: hidden;
+  .lg\:invisible {
+    display: none;
   }
 
-  .lg\:block {
+  .lg\:visible {
     display: block;
   }
 }
 @media (min-width: 1280px) {
-  .xl\:hidden {
-    display: hidden;
+  .xl\:invisible {
+    display: none;
   }
 
-  .xl\:block {
+  .xl\:visible {
     display: block;
   }
 }

@@ -3,6 +3,12 @@
 
 @mixin box-shadow($variants...) {
 	@include variants($variants) using ($ctx, $pseudo) {
+		#{$ctx}shadow-none#{$pseudo} {
+			box-shadow: none;
+		}
+		#{$ctx}shadow-inner#{$pseudo} {
+			box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+		}
 		#{$ctx}shadow-sm#{$pseudo} {
 			box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 		}
@@ -32,12 +38,6 @@
 		}
 		#{$ctx}shadow-2xl#{$pseudo} {
 			box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-		}
-		#{$ctx}shadow-inner#{$pseudo} {
-			box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-		}
-		#{$ctx}shadow-none#{$pseudo} {
-			box-shadow: none;
 		}
 	}
 }
