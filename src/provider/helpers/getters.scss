@@ -31,7 +31,7 @@
 // desc(100%)  -> max
 // desc(100vw) -> screen
 //
-@function desc($any, $use-percent: false) {
+@function desc($any, $as-percent: false) {
 	// prettier-ignore
 	$got: map.get((
 		100%: max,
@@ -42,7 +42,7 @@
 	@if $got {
 		@return $got;
 	}
-	@if type-of($any) == "number" and $use-percent {
+	@if type-of($any) == "number" and $as-percent {
 		$rv: $any;
 		@return $rv * 100;
 	}
@@ -63,8 +63,6 @@
 //
 // breakpoint(xs) -> 512
 // breakpoint(sm) -> 640
-//
-// TODO: Make sure supports `sm` and `"sm"` use-case.
 @function breakpoint($key) {
 	$got: map.get(configuration.$breakpoint-map, $key);
 	@if not $got {

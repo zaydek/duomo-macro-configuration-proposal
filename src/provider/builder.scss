@@ -4,14 +4,16 @@
 
 @use "core/box-shadow" as *;
 @use "core/margin" as *;
+@use "core/opacity" as *;
 @use "core/padding" as *;
 @use "core/position" as *;
 
 @at-root {
 	@if configuration.$headless == false {
-		@include position(responsive);
-		@include margin(responsive);
-		@include padding(responsive);
-		@include box-shadow(responsive, hover, group-hover, focus, group-focus);
+		// @include position(responsive);
+		// @include margin(responsive);
+		// @include padding(responsive);
+		// @include box-shadow(responsive, hover, group-hover, focus, group-focus);
+		@include opacity(responsive, hover, group-hover, focus, group-focus);
 	}
 }
