@@ -1,7 +1,80 @@
-.visible {
+.dis-visible {
   display: block;
 }
 
-.invisible {
+.dis-invisible {
   display: hidden;
+}
+
+.hover\:dis-visible:hover {
+  display: block;
+}
+
+.hover\:dis-invisible:hover {
+  display: hidden;
+}
+
+.group-hover:hover .dis-visible {
+  display: block;
+}
+
+.group-hover:hover .dis-invisible {
+  display: hidden;
+}
+
+.focus\:dis-visible:focus {
+  display: block;
+}
+
+.focus\:dis-invisible:focus {
+  display: hidden;
+}
+
+.group-focus:hover .dis-visible {
+  display: block;
+}
+
+.group-focus:hover .dis-invisible {
+  display: hidden;
+}
+
+@media (min-width: 512px) {
+  .xs\:dis-visible {
+    display: block;
+  }
+  .xs\:dis-invisible {
+    display: hidden;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:dis-visible {
+    display: block;
+  }
+  .sm\:dis-invisible {
+    display: hidden;
+  }
+}
+@media (min-width: 768px) {
+  .md\:dis-visible {
+    display: block;
+  }
+  .md\:dis-invisible {
+    display: hidden;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:dis-visible {
+    display: block;
+  }
+  .lg\:dis-invisible {
+    display: hidden;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:dis-visible {
+    display: block;
+  }
+  .xl\:dis-invisible {
+    display: hidden;
+  }
 }

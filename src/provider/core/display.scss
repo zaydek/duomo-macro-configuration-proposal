@@ -11,14 +11,14 @@
 
 // prettier-ignore
 $-opts: (
-	shorthand: none,
+	shorthand: dis,
 	property: display,
 	map: (
 		visible: block,
 		invisible: hidden,
 	),
 	resolver: none,
-	variants: (responsive),
+	variants: (responsive, hover, focus),
 );
 
 @mixin display {

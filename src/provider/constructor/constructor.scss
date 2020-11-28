@@ -29,8 +29,8 @@
 	// prettier-ignore
 	$shorthand: if(
 		map.get($range-opt, shorthand) == none,
-		map.get($range-opt, property),
-		map.get($range-opt, shorthand),
+		map.get($range-opt, property),  // Defer to $property
+		map.get($range-opt, shorthand), // Defer to $shorthand
 	);
 	$property: map.get($range-opt, property);
 	$range: map.get($range-opt, range);
@@ -111,8 +111,8 @@
 	// prettier-ignore
 	$shorthand: if(
 		map.get($map-opt, shorthand) == none,
-		map.get($map-opt, property),
-		map.get($map-opt, shorthand),
+		"",                                 // Defer to ""
+		map.get($map-opt, shorthand) + "-", // Defer to $shorthand + "-"
 	);
 	$property: map.get($map-opt, property);
 	$map: map.get($map-opt, map);
@@ -122,69 +122,68 @@
 
 	// .a { ... }
 	@each $mk, $mv in $map {
-		.#{$mk} {
+		.#{$shorthand}#{$mk} {
 			@each $prop in $property {
 				#{$prop}: resolve($mv, $resolver);
 			}
 		}
 	}
-
-	// // .hover\:a:hover { ... }
-	// // .group-hover:hover .a { ... }
-	// @if list.index($variants, hover) {
-	// 	@each $rv in $range {
-	// 		.#{n($rv)}#{$shorthand}-#{desc(abs($rv), $use-percent)} {
-	// 			@include mixins.hover {
-	// 				@each $prop in $property {
-	// 					#{$prop}: resolve($rv, $resolver);
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// 	@each $rv in $range {
-	// 		.#{n($rv)}#{$shorthand}-#{desc(abs($rv), $use-percent)} {
-	// 			@include mixins.group-hover {
-	// 				@each $prop in $property {
-	// 					#{$prop}: resolve($rv, $resolver);
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
-	// // .focus\:a:focus { ... }
-	// // .group-focus:focus .a { ... }
-	// @if list.index($variants, focus) {
-	// 	@each $rv in $range {
-	// 		.#{n($rv)}#{$shorthand}-#{desc(abs($rv), $use-percent)} {
-	// 			@include mixins.focus {
-	// 				@each $prop in $property {
-	// 					#{$prop}: resolve($rv, $resolver);
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// 	@each $rv in $range {
-	// 		.#{n($rv)}#{$shorthand}-#{desc(abs($rv), $use-percent)} {
-	// 			@include mixins.group-focus {
-	// 				@each $prop in $property {
-	// 					#{$prop}: resolve($rv, $resolver);
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
-	// // @media (min-width: ...) { .sm\:a { ... } }
-	// @if list.index($variants, responsive) {
-	// 	@include mixins.responsive {
-	// 		@each $rv in $range {
-	// 			&#{n($rv)}#{$shorthand}-#{desc(abs($rv), $use-percent)} {
-	// 				@each $prop in $property {
-	// 					#{$prop}: resolve($rv, $resolver);
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
+	// .hover\:a:hover { ... }
+	// .group-hover:hover .a { ... }
+	@if list.index($variants, hover) {
+		@each $mk, $mv in $map {
+			.#{$shorthand}#{$mk} {
+				@include mixins.hover {
+					@each $prop in $property {
+						#{$prop}: resolve($mv, $resolver);
+					}
+				}
+			}
+		}
+		@each $mk, $mv in $map {
+			.#{$shorthand}#{$mk} {
+				@include mixins.group-hover {
+					@each $prop in $property {
+						#{$prop}: resolve($mv, $resolver);
+					}
+				}
+			}
+		}
+	}
+	// .focus\:a:focus { ... }
+	// .group-focus:focus .a { ... }
+	@if list.index($variants, focus) {
+		@each $mk, $mv in $map {
+			.#{$shorthand}#{$mk} {
+				@include mixins.focus {
+					@each $prop in $property {
+						#{$prop}: resolve($mv, $resolver);
+					}
+				}
+			}
+		}
+		@each $mk, $mv in $map {
+			.#{$shorthand}#{$mk} {
+				@include mixins.group-focus {
+					@each $prop in $property {
+						#{$prop}: resolve($mv, $resolver);
+					}
+				}
+			}
+		}
+	}
+	// @media (min-width: ...) { .sm\:a { ... } }
+	@if list.index($variants, responsive) {
+		@include mixins.responsive {
+			@each $mk, $mv in $map {
+				&#{$shorthand}#{$mk} {
+					@each $prop in $property {
+						#{$prop}: resolve($mv, $resolver);
+					}
+				}
+			}
+		}
+	}
 }
 
 @mixin constructor($opts) {
