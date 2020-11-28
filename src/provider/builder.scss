@@ -1,7 +1,8 @@
 @use "helpers" as *;
 
 @use "configuration";
-@use "core/box-shadow" as core;
+@use "core/margin" as *;
+@use "core/box-shadow" as *;
 
 // @mixin lib {
 // 	@include core.group;
@@ -20,6 +21,7 @@
 
 @at-root {
 	@if configuration.$headless == false {
-		@include core.box-shadow(responsive, hover, group-hover, focus, group-focus);
+		@include margin(responsive);
+		@include box-shadow(responsive, hover, group-hover, focus, group-focus);
 	}
 }

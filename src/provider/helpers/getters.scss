@@ -68,7 +68,7 @@
 @function breakpoint($key) {
 	$got: map.get(configuration.$breakpoint-map, $key);
 	@if not $got {
-		@error "breakpoints: no such `$key`; key=#{$key}";
+		@error "breakpoints: no such `$key`; $key=#{$key}";
 	}
 	@return $got;
 }

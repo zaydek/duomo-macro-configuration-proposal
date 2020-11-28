@@ -65,7 +65,7 @@
 	}
 
 	@if $resolver != none and $resolver != rem and $resolver != em and $resolver != px {
-		@error "resolve: `$resolver` must be `rem`, `em`, `px`, or `none`";
+		@error "resolve: `$resolver` must be `rem`, `em`, `px`, or `none`; $resolver=#{$resolver}";
 	}
 	@if $resolver == rem {
 		@return rem($any);

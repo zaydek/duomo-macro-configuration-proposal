@@ -1,0 +1,87 @@
+@use "../constructor" as *;
+@use "../helpers" as *;
+
+// prettier-ignore
+$-opts: (
+	(
+		shorthand: m,
+		property: margin,
+		range: var-join(
+			nrange(),
+			auto,
+			range(),
+		),
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: mx,
+		property: (margin-left, margin-right),
+		range: var-join(
+			nrange(),
+			auto,
+			range(),
+		),
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: my,
+		property: (margin-top, margin-bottom),
+		range: var-join(
+			nrange(),
+			auto,
+			range(),
+		),
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: mt,
+		property: margin-top,
+		range: var-join(
+			nrange(),
+			auto,
+			range(),
+		),
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: mr,
+		property: margin-right,
+		range: var-join(
+			nrange(),
+			auto,
+			range(),
+		),
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: mb,
+		property: margin-bottom,
+		range: var-join(
+			nrange(),
+			auto,
+			range(),
+		),
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: ml,
+		property: margin-left,
+		range: var-join(
+			nrange(),
+			auto,
+			range(),
+		),
+		resolver: rem,
+		variants: (responsive),
+	),
+);
+
+@mixin margin {
+	@include constructor($-opts);
+}
