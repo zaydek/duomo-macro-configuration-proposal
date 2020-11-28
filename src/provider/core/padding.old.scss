@@ -1,0 +1,59 @@
+@use "../constructor" as *;
+@use "../helpers" as *;
+
+// prettier-ignore
+$-opts: (
+	(
+		shorthand: p,
+		property: padding,
+		range: range(),
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: px,
+		property: (padding-left, padding-right),
+		range: range(),
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: py,
+		property: (padding-top, padding-bottom),
+		range: range(),
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: pt,
+		property: padding-top,
+		range: range(),
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: pr,
+		property: padding-right,
+		range: range(),
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: pb,
+		property: padding-bottom,
+		range: range(),
+		resolver: rem,
+		variants: (responsive),
+	),
+	(
+		shorthand: pl,
+		property: padding-left,
+		range: range(),
+		resolver: rem,
+		variants: (responsive),
+	),
+);
+
+@mixin padding {
+	@include constructor($-opts);
+}

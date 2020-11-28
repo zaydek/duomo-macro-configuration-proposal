@@ -1,8 +1,9 @@
 @use "helpers" as *;
 
 @use "configuration";
-@use "core/margin" as *;
 @use "core/box-shadow" as *;
+@use "core/margin" as *;
+@use "core/padding" as *;
 
 // @mixin lib {
 // 	@include core.group;
@@ -22,6 +23,7 @@
 @at-root {
 	@if configuration.$headless == false {
 		@include margin(responsive);
+		@include padding(responsive);
 		@include box-shadow(responsive, hover, group-hover, focus, group-focus);
 	}
 }

@@ -1,24 +1,6 @@
 @use "_variants" as *;
 @use "../helpers" as *;
 
-// prettier-ignore
-@mixin generate-from-range($info-map) {
-	$ctx:       map-get($info-map, ctx);
-	$pseudo:    map-get($info-map, pseudo);
-	$shorthand: map-get($info-map, shorthand);
-	$property:  map-get($info-map, property);
-	$range:     map-get($info-map, range);
-	$resolver:  map-get($info-map, resolver);
-
-	@each $rv in $range {
-		#{$ctx}#{n($rv)}#{$shorthand}-#{desc(abs($rv))}#{$pseudo} {
-			@each $prop in $property {
-				#{$prop}: resolve($rv, $resolver);
-			}
-		}
-	}
-}
-
 @mixin margin($variants...) {
 	// prettier-ignore
 	@include variants($variants) using ($ctx, $pseudo) {

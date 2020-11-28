@@ -1,59 +1,64 @@
-@use "../constructor" as *;
+@use "_variants" as *;
 @use "../helpers" as *;
 
-// prettier-ignore
-$-opts: (
-	(
-		shorthand: p,
-		property: padding,
-		range: range(),
-		resolver: rem,
-		variants: (responsive),
-	),
-	(
-		shorthand: px,
-		property: (padding-left, padding-right),
-		range: range(),
-		resolver: rem,
-		variants: (responsive),
-	),
-	(
-		shorthand: py,
-		property: (padding-top, padding-bottom),
-		range: range(),
-		resolver: rem,
-		variants: (responsive),
-	),
-	(
-		shorthand: pt,
-		property: padding-top,
-		range: range(),
-		resolver: rem,
-		variants: (responsive),
-	),
-	(
-		shorthand: pr,
-		property: padding-right,
-		range: range(),
-		resolver: rem,
-		variants: (responsive),
-	),
-	(
-		shorthand: pb,
-		property: padding-bottom,
-		range: range(),
-		resolver: rem,
-		variants: (responsive),
-	),
-	(
-		shorthand: pl,
-		property: padding-left,
-		range: range(),
-		resolver: rem,
-		variants: (responsive),
-	),
-);
-
-@mixin padding {
-	@include constructor($-opts);
+@mixin padding($variants...) {
+	// prettier-ignore
+	@include variants($variants) using ($ctx, $pseudo) {
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: p,
+			property: padding,
+			range: range(),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: px,
+			property: (padding-left, padding-right),
+			range: range(),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: py,
+			property: (padding-top, padding-bottom),
+			range: range(),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: pt,
+			property: padding-top,
+			range: range(),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: pr,
+			property: padding-right,
+			range: range(),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: pb,
+			property: padding-bottom,
+			range: range(),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: pl,
+			property: padding-left,
+			range: range(),
+			resolver: rem,
+		));
+	}
 }
