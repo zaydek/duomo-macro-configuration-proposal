@@ -1,0 +1,67 @@
+@use "sass:list";
+
+@use "../helpers" as *;
+
+// @mixin variants($variants) {
+// 	@content (".", "");
+// 	@if list.index($variants, hover) {
+// 		@content (".hover\\:", ":hover");
+// 	}
+// 	@if list.index($variants, "hover") {
+// 		@content (".focus\\:", ":focus");
+// 	}
+// 	@if list.index($variants, "group-hover") {
+// 		@content (".group-hover:hover .group-hover\\:", "");
+// 	}
+// 	@if list.index($variants, "group-focus") {
+// 		@content (".group-focus:focus .group-focus\\:", "");
+// 	}
+// 	@if list.index($variants, "responsive") {
+// 		@each $mk, $mv in (breakpoints()) {
+// 			@media (min-width: #{$mv + px}) {
+// 				@content (".#{$mk}\\:", "");
+// 			}
+// 		}
+// 	}
+// }
+
+@mixin variants($variants) {
+	@content (
+		".",
+		""
+	);
+	@if list.index($variants, hover) {
+		@content (
+			".hover\\:",
+			":hover"
+		);
+	}
+	@if list.index($variants, "hover") {
+		@content (
+			".focus\\:",
+			":focus"
+		);
+	}
+	@if list.index($variants, "group-hover") {
+		@content (
+			".group-hover:hover .group-hover\\:",
+			""
+		);
+	}
+	@if list.index($variants, "group-focus") {
+		@content (
+		".group-focus:focus .group-focus\\:",
+			""
+		);
+	}
+	@if list.index($variants, "responsive") {
+		@each $mk, $mv in (breakpoints()) {
+			@media (min-width: #{$mv + px}) {
+				@content (
+					".#{$mk}\\:",
+					""
+				);
+			}
+		}
+	}
+}

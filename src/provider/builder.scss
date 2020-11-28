@@ -1,25 +1,25 @@
 @use "helpers" as *;
 
 @use "configuration";
-@use "core";
+@use "core/box-shadow" as core;
 
-@mixin lib {
-	@include core.group;
-	@include core.display;
-	@include core.position;
-	@include core.margin;
-	@include core.padding;
-	@include core.meta-square;
-	@include core.meta-circle;
-	@include core.width;
-	@include core.height;
-	@include core.border;
-	@include core.opacity;
-	@include core.z-index;
-}
+// @mixin lib {
+// 	@include core.group;
+// 	@include core.display;
+// 	@include core.position;
+// 	@include core.margin;
+// 	@include core.padding;
+// 	@include core.meta-square;
+// 	@include core.meta-circle;
+// 	@include core.width;
+// 	@include core.height;
+// 	@include core.border;
+// 	@include core.opacity;
+// 	@include core.z-index;
+// }
 
 @at-root {
 	@if configuration.$headless == false {
-		@include lib;
+		@include core.box-shadow(responsive, hover, group-hover, focus, group-focus);
 	}
 }
