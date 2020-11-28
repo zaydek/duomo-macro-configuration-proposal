@@ -1,0 +1,15 @@
+@use "_variants" as *;
+@use "../helpers" as *;
+
+@mixin container {
+	.container {
+		width: 100%;
+	}
+	@each $key, $n in breakpoints() {
+		@media (min-width: px($n)) {
+			.container {
+				max-width: px($n);
+			}
+		}
+	}
+}

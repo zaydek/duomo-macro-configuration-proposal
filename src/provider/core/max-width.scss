@@ -24,9 +24,9 @@
 
 @mixin max-width($variants...) {
 	@include variants($variants) using ($ctx, $pseudo) {
-		@each $mk, $mv in breakpoints() {
-			#{$ctx}max-w-#{$mk}#{$pseudo} {
-				max-width: px($mv);
+		@each $key, $n in breakpoints() {
+			#{$ctx}max-w-#{$key}#{$pseudo} {
+				max-width: px($n);
 			}
 		}
 	}

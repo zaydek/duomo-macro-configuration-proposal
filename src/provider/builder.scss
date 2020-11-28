@@ -5,9 +5,11 @@
 @use "core/border-radius" as *;
 @use "core/border-width" as *;
 @use "core/box-shadow" as *;
+@use "core/container" as *;
 @use "core/display" as *;
 @use "core/height" as *;
 @use "core/margin" as *;
+@use "core/max-width" as *;
 @use "core/max-width" as *;
 @use "core/opacity" as *;
 @use "core/overflow" as *;
@@ -20,7 +22,8 @@
 
 @at-root {
 	@if configuration.$headless == false {
-		@include max-width(responsive);
+		// @include max-width(responsive);
+		@include container;
 
 		// @include display(responsive);
 		// @include position(responsive);
