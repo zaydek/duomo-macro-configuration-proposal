@@ -9,6 +9,7 @@
 @use "core/display" as *;
 @use "core/grid" as *;
 @use "core/height" as *;
+@use "core/aspect-ratio" as *;
 @use "core/margin" as *;
 @use "core/max-width" as *;
 @use "core/max-width" as *;
@@ -24,12 +25,12 @@
 
 @at-root {
 	@if configuration.$headless == false {
-		@include grid(responsive);
-
 		// @include display(responsive);
+		// @include grid(responsive);
 		// @include position(responsive);
 		// @include margin(responsive);
 		// @include padding(responsive);
+		@include aspect-ratio;
 		// @include width(responsive);
 		// @include max-width(responsive);
 		// @include container;
