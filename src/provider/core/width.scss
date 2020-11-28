@@ -12,8 +12,8 @@
 			range: var-join(
 				auto,
 				range(),
-				min-content,
-				max-content,
+				// min-content,
+				// max-content,
 				100%,
 				100vw,
 			),

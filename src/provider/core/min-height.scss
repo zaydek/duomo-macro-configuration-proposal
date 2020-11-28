@@ -1,7 +1,7 @@
 @use "_variants" as *;
 @use "../helpers" as *;
 
-@mixin height($variants...) {
+@mixin min-height($variants...) {
 	// prettier-ignore
 	@include variants($variants) using ($ctx, $pseudo) {
 		@include generate-from-range((
@@ -10,10 +10,6 @@
 			shorthand: h,
 			property: (height),
 			range: var-join(
-				auto,
-				range(),
-				// min-content,
-				// max-content,
 				100%,
 				100vh,
 			),
