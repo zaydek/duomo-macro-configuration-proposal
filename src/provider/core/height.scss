@@ -8,7 +8,7 @@
 			ctx: $ctx,
 			pseudo: $pseudo,
 			shorthand: h,
-			property: height,
+			property: (height),
 			range: var-join(
 				auto,
 				range(),

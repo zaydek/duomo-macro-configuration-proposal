@@ -8,8 +8,12 @@
 			ctx: $ctx,
 			pseudo: $pseudo,
 			shorthand: m,
-			property: margin,
-			range: var-join(nrange(), auto, range()),
+			property: (margin),
+			range: var-join(
+				nrange(),
+				auto,
+				range(),
+			),
 			resolver: rem,
 		));
 		@include generate-from-range((
@@ -17,7 +21,11 @@
 			pseudo: $pseudo,
 			shorthand: mx,
 			property: (margin-left, margin-right),
-			range: var-join(nrange(), auto, range()),
+			range: var-join(
+				nrange(),
+				auto,
+				range(),
+			),
 			resolver: rem,
 		));
 		@include generate-from-range((
@@ -25,39 +33,59 @@
 			pseudo: $pseudo,
 			shorthand: my,
 			property: (margin-top, margin-bottom),
-			range: var-join(nrange(), auto, range()),
+			range: var-join(
+				nrange(),
+				auto,
+				range(),
+			),
 			resolver: rem,
 		));
 		@include generate-from-range((
 			ctx: $ctx,
 			pseudo: $pseudo,
 			shorthand: mt,
-			property: margin-top,
-			range: var-join(nrange(), auto, range()),
+			property: (margin-top),
+			range: var-join(
+				nrange(),
+				auto,
+				range(),
+			),
 			resolver: rem,
 		));
 		@include generate-from-range((
 			ctx: $ctx,
 			pseudo: $pseudo,
 			shorthand: mr,
-			property: margin-right,
-			range: var-join(nrange(), auto, range()),
+			property: (margin-right),
+			range: var-join(
+				nrange(),
+				auto,
+				range(),
+			),
 			resolver: rem,
 		));
 		@include generate-from-range((
 			ctx: $ctx,
 			pseudo: $pseudo,
 			shorthand: mb,
-			property: margin-bottom,
-			range: var-join(nrange(), auto, range()),
+			property: (margin-bottom),
+			range: var-join(
+				nrange(),
+				auto,
+				range(),
+			),
 			resolver: rem,
 		));
 		@include generate-from-range((
 			ctx: $ctx,
 			pseudo: $pseudo,
 			shorthand: ml,
-			property: margin-left,
-			range: var-join(nrange(), auto, range()),
+			property: (margin-left),
+			range: var-join(
+				nrange(),
+				auto,
+				range(),
+			),
 			resolver: rem,
 		));
 	}

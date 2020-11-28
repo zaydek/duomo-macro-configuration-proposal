@@ -1,3 +1,6 @@
+@use "_variants" as *;
+@use "../helpers" as *;
+
 @mixin group {
 	.group {
 		/* YOLO */

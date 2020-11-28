@@ -13,9 +13,9 @@ $-opts: (
 @mixin position($variants...) {
 	// prettier-ignore
 	@include variants($variants) using ($ctx, $pseudo) {
-		@each $each in $-opts {
-			#{$ctx}#{$each}#{$pseudo} {
-				position: $each;
+		@each $opt in $-opts {
+			#{$ctx}#{$opt}#{$pseudo} {
+				position: $opt;
 			}
 		}
 		@include generate-from-range((
@@ -55,7 +55,7 @@ $-opts: (
 			ctx: $ctx,
 			pseudo: $pseudo,
 			shorthand: t,
-			property: top,
+			property: (top),
 			range: var-join(
 				auto,
 				range(),
@@ -66,7 +66,7 @@ $-opts: (
 			ctx: $ctx,
 			pseudo: $pseudo,
 			shorthand: r,
-			property: right,
+			property: (right),
 			range: var-join(
 				auto,
 				range(),
@@ -77,7 +77,7 @@ $-opts: (
 			ctx: $ctx,
 			pseudo: $pseudo,
 			shorthand: b,
-			property: bottom,
+			property: (bottom),
 			range: var-join(
 				auto,
 				range(),
@@ -88,7 +88,7 @@ $-opts: (
 			ctx: $ctx,
 			pseudo: $pseudo,
 			shorthand: l,
-			property: left,
+			property: (left),
 			range: var-join(
 				auto,
 				range(),

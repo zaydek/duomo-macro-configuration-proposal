@@ -8,7 +8,7 @@
 			ctx: $ctx,
 			pseudo: $pseudo,
 			shorthand: w,
-			property: width,
+			property: (width),
 			range: var-join(
 				auto,
 				range(),

@@ -8,7 +8,7 @@
 			ctx: $ctx,
 			pseudo: $pseudo,
 			shorthand: z,
-			property: z-index,
+			property: (z-index),
 			range: var-join(
 				-10,
 				  0,

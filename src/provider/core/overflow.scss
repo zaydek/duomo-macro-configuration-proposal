@@ -9,28 +9,28 @@ $-opts: (
 
 @mixin overflow($variants...) {
 	@include variants($variants) using ($ctx, $pseudo) {
-		@each $each in $-opts {
-			#{$ctx}overflow-#{$each}#{$pseudo} {
-				@if $each == scroll {
+		@each $opt in $-opts {
+			#{$ctx}overflow-#{$opt}#{$pseudo} {
+				@if $opt == scroll {
 					-webkit-overflow-scrolling: touch;
 				}
-				overflow: $each;
+				overflow: $opt;
 			}
 		}
-		@each $each in $-opts {
-			#{$ctx}overflow-x-#{$each}#{$pseudo} {
-				@if $each == scroll {
+		@each $opt in $-opts {
+			#{$ctx}overflow-x-#{$opt}#{$pseudo} {
+				@if $opt == scroll {
 					-webkit-overflow-scrolling: touch;
 				}
-				overflow-x: $each;
+				overflow-x: $opt;
 			}
 		}
-		@each $each in $-opts {
-			#{$ctx}overflow-y-#{$each}#{$pseudo} {
-				@if $each == scroll {
+		@each $opt in $-opts {
+			#{$ctx}overflow-y-#{$opt}#{$pseudo} {
+				@if $opt == scroll {
 					-webkit-overflow-scrolling: touch;
 				}
-				overflow-y: $each;
+				overflow-y: $opt;
 			}
 		}
 	}

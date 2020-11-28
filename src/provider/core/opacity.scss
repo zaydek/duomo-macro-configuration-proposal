@@ -8,7 +8,7 @@
 			ctx: $ctx,
 			pseudo: $pseudo,
 			shorthand: opacity,
-			property: opacity,
+			property: (opacity),
 			range: var-join(
 				0,
 				0.05,
