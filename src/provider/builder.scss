@@ -8,6 +8,7 @@
 @use "core/display" as *;
 @use "core/height" as *;
 @use "core/margin" as *;
+@use "core/max-width" as *;
 @use "core/opacity" as *;
 @use "core/overflow" as *;
 @use "core/padding" as *;
@@ -19,8 +20,9 @@
 
 @at-root {
 	@if configuration.$headless == false {
-		@include display(responsive);
+		@include max-width(responsive);
 
+		// @include display(responsive);
 		// @include position(responsive);
 		// @include margin(responsive);
 		// @include padding(responsive);

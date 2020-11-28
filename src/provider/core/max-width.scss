@@ -1,0 +1,33 @@
+// @mixin max-width-from-breakpoint-map($breakpoint-map) {
+// 	// prettier-ignore
+// 	@include generate-from-map(
+// 		"max-w",
+// 		(max-width),
+// 		$breakpoint-map,
+// 		px,
+// 	);
+//
+// 	// TODO: Add line-break to generated output?
+// 	@if not & {
+// 		@each $k, $v in $breakpoint-map {
+// 			@media (min-width: px($v)) {
+// 				.max-w-container {
+// 					max-width: px($v);
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+@use "_variants" as *;
+@use "../helpers" as *;
+
+@mixin max-width($variants...) {
+	@include variants($variants) using ($ctx, $pseudo) {
+		@each $mk, $mv in breakpoints() {
+			#{$ctx}max-w-#{$mk}#{$pseudo} {
+				max-width: px($mv);
+			}
+		}
+	}
+}
