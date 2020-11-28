@@ -1,0 +1,48 @@
+@use "_variants" as *;
+@use "../helpers" as *;
+
+@mixin border-width($variants...) {
+	// prettier-ignore
+	@include variants($variants) using ($ctx, $pseudo) {
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: border,
+			property: (border-width),
+			range: cap(range(), 8),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: border-t,
+			property: (border-top-width),
+			range: cap(range(), 8),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: border-r,
+			property: (border-right-width),
+			range: cap(range(), 8),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: border-b,
+			property: (border-bottom-width),
+			range: cap(range(), 8),
+			resolver: rem,
+		));
+		@include generate-from-range((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: border-l,
+			property: (border-left-width),
+			range: cap(range(), 8),
+			resolver: rem,
+		));
+	}
+}

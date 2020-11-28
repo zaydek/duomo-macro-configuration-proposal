@@ -2,6 +2,8 @@
 
 @use "configuration";
 
+@use "core/border-radius" as *;
+@use "core/border-width" as *;
 @use "core/box-shadow" as *;
 @use "core/height" as *;
 @use "core/margin" as *;
@@ -18,10 +20,12 @@
 	@if configuration.$headless == false {
 		// @include position(responsive);
 		// @include margin(responsive);
-		@include width(responsive);
-		@include height(responsive);
-		// @include shape();
 		// @include padding(responsive);
+		// @include width(responsive);
+		// @include height(responsive);
+		// @include shape();
+		// @include border-width(responsive);
+		@include border-radius(responsive);
 		// @include box-shadow(responsive, hover, group-hover, focus, group-focus);
 		// @include opacity(responsive, hover, group-hover, focus, group-focus);
 		// @include overflow(responsive);
