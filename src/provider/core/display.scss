@@ -1,20 +1,20 @@
-@use "../constructor" as *;
+@use "_variants" as *;
 @use "../helpers" as *;
 
-// TODO
-
-// prettier-ignore
-$-opts: (
-	shorthand: none,
-	property: display,
-	map: (
-		visible: block,
-		invisible: hidden,
-	),
-	resolver: none,
-	variants: (responsive),
-);
-
-@mixin display {
-	@include constructor($-opts);
+@mixin display($variants...) {
+	// prettier-ignore
+	@include variants($variants) using ($ctx, $pseudo) {
+		@include generate-from-map((
+			ctx: $ctx,
+			pseudo: $pseudo,
+			shorthand: none,
+			property: (display),
+			// TODO
+			map: (
+				invisible: hidden,
+				visible: block,
+			),
+			resolver: none,
+		));
+	}
 }
