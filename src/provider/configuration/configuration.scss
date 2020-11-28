@@ -60,8 +60,7 @@ $nrange: (
 	-256,
 	-288,
 	-320,
-	-384,
-);
+) !default;
 
 // prettier-ignore
 $range: (
@@ -101,8 +100,7 @@ $range: (
 	256,
 	288,
 	320,
-	384,
-);
+) !default;
 
 // =================
 // == Breakpoints ==
@@ -110,10 +108,10 @@ $range: (
 
 // prettier-ignore
 $breakpoint-map: (
-	xs:   512, // 32 * 16
+	// xs:   512, // 32 * 16
 	sm:   640, // 32 * 20
 	md:   768, // 32 * 24
 	lg:  1024, // 32 * 32
 	xl:  1280, // 32 * 40
 	// 2xl: 1536, // 32 * 48
-);
+) !default;
