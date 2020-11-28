@@ -1,167 +1,53 @@
-.overflow-hidden {
-  overflow: hidden;
+.pointer-events-auto {
+  pointer-events: auto;
 }
 
-.overflow-scroll {
-  -webkit-overflow-scrolling: touch;
-  overflow: scroll;
-}
-
-.overflow-x-hidden {
-  overflow-x: hidden;
-}
-
-.overflow-x-scroll {
-  -webkit-overflow-scrolling: touch;
-  overflow-x: scroll;
-}
-
-.overflow-y-hidden {
-  overflow-y: hidden;
-}
-
-.overflow-y-scroll {
-  -webkit-overflow-scrolling: touch;
-  overflow-y: scroll;
+.pointer-events-none {
+  pointer-events: none;
 }
 
 @media (min-width: 512px) {
-  .xs\:overflow-hidden {
-    overflow: hidden;
+  .xs\:pointer-events-auto {
+    pointer-events: auto;
   }
 
-  .xs\:overflow-scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow: scroll;
-  }
-
-  .xs\:overflow-x-hidden {
-    overflow-x: hidden;
-  }
-
-  .xs\:overflow-x-scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow-x: scroll;
-  }
-
-  .xs\:overflow-y-hidden {
-    overflow-y: hidden;
-  }
-
-  .xs\:overflow-y-scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow-y: scroll;
+  .xs\:pointer-events-none {
+    pointer-events: none;
   }
 }
 @media (min-width: 640px) {
-  .sm\:overflow-hidden {
-    overflow: hidden;
+  .sm\:pointer-events-auto {
+    pointer-events: auto;
   }
 
-  .sm\:overflow-scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow: scroll;
-  }
-
-  .sm\:overflow-x-hidden {
-    overflow-x: hidden;
-  }
-
-  .sm\:overflow-x-scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow-x: scroll;
-  }
-
-  .sm\:overflow-y-hidden {
-    overflow-y: hidden;
-  }
-
-  .sm\:overflow-y-scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow-y: scroll;
+  .sm\:pointer-events-none {
+    pointer-events: none;
   }
 }
 @media (min-width: 768px) {
-  .md\:overflow-hidden {
-    overflow: hidden;
+  .md\:pointer-events-auto {
+    pointer-events: auto;
   }
 
-  .md\:overflow-scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow: scroll;
-  }
-
-  .md\:overflow-x-hidden {
-    overflow-x: hidden;
-  }
-
-  .md\:overflow-x-scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow-x: scroll;
-  }
-
-  .md\:overflow-y-hidden {
-    overflow-y: hidden;
-  }
-
-  .md\:overflow-y-scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow-y: scroll;
+  .md\:pointer-events-none {
+    pointer-events: none;
   }
 }
 @media (min-width: 1024px) {
-  .lg\:overflow-hidden {
-    overflow: hidden;
+  .lg\:pointer-events-auto {
+    pointer-events: auto;
   }
 
-  .lg\:overflow-scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow: scroll;
-  }
-
-  .lg\:overflow-x-hidden {
-    overflow-x: hidden;
-  }
-
-  .lg\:overflow-x-scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow-x: scroll;
-  }
-
-  .lg\:overflow-y-hidden {
-    overflow-y: hidden;
-  }
-
-  .lg\:overflow-y-scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow-y: scroll;
+  .lg\:pointer-events-none {
+    pointer-events: none;
   }
 }
 @media (min-width: 1280px) {
-  .xl\:overflow-hidden {
-    overflow: hidden;
+  .xl\:pointer-events-auto {
+    pointer-events: auto;
   }
 
-  .xl\:overflow-scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow: scroll;
-  }
-
-  .xl\:overflow-x-hidden {
-    overflow-x: hidden;
-  }
-
-  .xl\:overflow-x-scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow-x: scroll;
-  }
-
-  .xl\:overflow-y-hidden {
-    overflow-y: hidden;
-  }
-
-  .xl\:overflow-y-scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow-y: scroll;
+  .xl\:pointer-events-none {
+    pointer-events: none;
   }
 }

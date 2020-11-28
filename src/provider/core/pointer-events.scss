@@ -1,0 +1,13 @@
+@use "_variants" as *;
+@use "../helpers" as *;
+
+@mixin pointer-events($variants...) {
+	@include variants($variants) using ($ctx, $pseudo) {
+		#{$ctx}pointer-events-auto#{$pseudo} {
+			pointer-events: auto;
+		}
+		#{$ctx}pointer-events-none#{$pseudo} {
+			pointer-events: none;
+		}
+	}
+}
