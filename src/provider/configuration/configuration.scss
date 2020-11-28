@@ -7,7 +7,7 @@
 // Describes whether to generate Duomo.
 $headless: false !default;
 
-// Describes whether to generate Duomo variables.
+// Describes whether to generate Duomo `:root` variables.
 $headless-root: false !default;
 
 // Describes whether to generate debugger utilities.
@@ -16,7 +16,7 @@ $debugger: true !default;
 // Describes whether to generate stagger utilities.
 $stagger: true !default;
 
-// Used for pseudos and breakpoints.
+// Delimiter for pseudos and breakpoints.
 $delimiter: ":" !default;
 
 // ============

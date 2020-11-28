@@ -2,19 +2,22 @@
 @use "sass:map";
 
 @use "../helpers" as *;
+// @use "../mixins" as *;
 
-// FIXME: See NOTE before `constructor`.
-@mixin FIXME-responsive {
-	@each $key, $n in breakpoints() {
-		@media (min-width: px($n)) {
-			.#{$key} {
-				@at-root {
-					@content;
-				}
-			}
-		}
-	}
-}
+// @forward "../mixins";
+
+// // FIXME: See NOTE before `constructor`.
+// @mixin FIXME-responsive {
+// 	@each $key, $n in breakpoints() {
+// 		@media (min-width: px($n)) {
+// 			.#{$key} {
+// 				@at-root {
+// 					@content;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 
 @function to-list($opts) {
 	// prettier-ignore
@@ -97,16 +100,16 @@
 					}
 				}
 			}
-			// (responsive)
-			@include FIXME-responsive {
-				@each $rv in $range {
-					&#{delimiter()}#{n($rv)}#{$shorthand}-#{code-name(abs(if($percent, $rv * 100, $rv)))} {
-						@each $prop in $property {
-							#{$prop}: resolve($rv, $resolver);
-						}
-					}
-				}
-			}
+			// // (responsive)
+			// @include responsive {
+			// 	@each $rv in $range {
+			// 		&#{delimiter()}#{n($rv)}#{$shorthand}-#{code-name(abs(if($percent, $rv * 100, $rv)))} {
+			// 			@each $prop in $property {
+			// 				#{$prop}: resolve($rv, $resolver);
+			// 			}
+			// 		}
+			// 	}
+			// }
 		}
 	}
 }

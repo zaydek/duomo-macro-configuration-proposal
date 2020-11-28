@@ -5,7 +5,7 @@
 
 @mixin lib {
 	@include core.group;
-	@include core.display;
+	// @include core.display;
 	@include core.position;
 	@include core.margin;
 	@include core.padding;
