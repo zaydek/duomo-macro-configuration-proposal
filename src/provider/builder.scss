@@ -6,6 +6,8 @@
 @use "preflight/tailwind-base" as *;
 @use "preflight/vendored-font-smoothing" as *;
 
+@use "core/aspect-ratio" as *;
+@use "core/background-color" as *;
 @use "core/border-radius" as *;
 @use "core/border-width" as *;
 @use "core/box-shadow" as *;
@@ -13,7 +15,6 @@
 @use "core/display" as *;
 @use "core/grid" as *;
 @use "core/height" as *;
-@use "core/aspect-ratio" as *;
 @use "core/margin" as *;
 @use "core/max-width" as *;
 @use "core/max-width" as *;
@@ -57,7 +58,9 @@
 
 @at-root {
 	@if configuration.$headless == false {
-		@include head;
-		@include body;
+		@include background-color(responsive);
+
+		// @include head;
+		// @include body;
 	}
 }

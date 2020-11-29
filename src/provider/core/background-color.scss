@@ -1,0 +1,63 @@
+@use "sass:list";
+@use "sass:meta";
+
+@use "_variants" as *;
+@use "../helpers" as *;
+
+@function no-op($selector) {
+	@return ".#{$selector}";
+}
+@function hover($selector) {
+	@return ".hover\\:#{$selector}:hover";
+}
+@function focus($selector) {
+	@return ".focus\\:#{$selector}:focus";
+}
+@function group-hover($selector) {
+	@return ".group-hover:hover .group-hover\\:#{$selector}";
+}
+@function group-focus($selector) {
+	@return ".group-focus:focus .group-focus\\:#{$selector}";
+}
+@function responsive($selector) {
+	@return "#{&}\\:#{$selector}";
+}
+
+@mixin variants($variants) {
+	@content (no-op);
+	@each $variant in $variants {
+		// prettier-ignore
+		@if
+			$variant == hover or
+			$variant == focus or
+			$variant == group-hover or
+			$variant == group-focus {
+			@content ($variant);
+		}
+	}
+	@if list.index($variants, responsive) {
+		@each $mk, $mv in breakpoints() {
+			@media (min-width: #{$mv + px}) {
+				.#{$mk} {
+					@at-root {
+						@content (responsive);
+					}
+				}
+			}
+		}
+	}
+}
+
+@function variant($selector, $variant-fn) {
+	@return meta.call($variant-fn, $selector);
+}
+
+@mixin background-color($variants...) {
+	@include variants($variants) using ($v) {
+		@each $rv in (400, 500, 600, 700) {
+			#{variant(red-#{$rv}, $v)} {
+				background-color: var(--red-#{$rv});
+			}
+		}
+	}
+}
