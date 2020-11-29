@@ -8,7 +8,7 @@
 
 @use "core/background-color" as *;
 @use "core/position" as *;
-
+@use "core/width" as *;
 // @use "core/aspect-ratio" as *;
 // @use "core/border-radius" as *;
 // @use "core/border-width" as *;
@@ -16,7 +16,7 @@
 // @use "core/container" as *;
 // @use "core/display" as *;
 // @use "core/grid" as *;
-// @use "core/height" as *;
+@use "core/height" as *;
 // @use "core/margin" as *;
 // @use "core/max-width" as *;
 // @use "core/max-width" as *;
@@ -27,7 +27,6 @@
 // @use "core/pointer-events" as *;
 // @use "core/position" as *;
 // @use "core/shape" as *;
-// @use "core/width" as *;
 // @use "core/z-index" as *;
 
 // @mixin head {
@@ -35,35 +34,33 @@
 // 	@include tailwind-base;
 // 	@include vendored-font-smoothing;
 // }
-//
-// @mixin body {
-// 	@include display(responsive);
-// 	@include grid(responsive);
-// 	@include position(responsive);
-// 	@include margin(responsive);
-// 	@include padding(responsive);
-// 	@include width(responsive);
-// 	@include max-width(responsive);
-// 	@include container;
-// 	@include height(responsive);
-// 	@include min-height(responsive);
-// 	@include shape();
-// 	@include aspect-ratio;
-// 	@include border-width(responsive);
-// 	@include border-radius(responsive);
-// 	@include box-shadow(responsive, hover, group-hover, focus, group-focus);
-// 	@include opacity(responsive, hover, group-hover, focus, group-focus);
-// 	@include overflow(responsive);
-// 	@include z-index(responsive, hover, group-hover, focus, group-focus);
-// 	@include pointer-events(responsive);
-// }
+
+@mixin body {
+	// @include display(responsive);
+	// @include grid(responsive);
+	// @include position(responsive); // DONE
+	// @include margin(responsive);
+	// @include padding(responsive);
+	// @include width(responsive); // DONE
+	// @include max-width(responsive);
+	// @include container;
+	@include height(responsive); // DONE
+	// @include min-height(responsive);
+	// @include shape();
+	// @include aspect-ratio;
+	// @include background-color(responsive, hover, group-hover, focus, group-focus); // DONE
+	// @include border-width(responsive);
+	// @include border-radius(responsive);
+	// @include box-shadow(responsive, hover, group-hover, focus, group-focus);
+	// @include opacity(responsive, hover, group-hover, focus, group-focus);
+	// @include overflow(responsive);
+	// @include z-index(responsive, hover, group-hover, focus, group-focus);
+	// @include pointer-events(responsive);
+}
 
 @at-root {
 	@if configuration.$headless == false {
-		@include position(hover);
-		@include background-color(responsive, hover, group-hover, focus, group-focus);
-
 		// @include head;
-		// @include body;
+		@include body;
 	}
 }
