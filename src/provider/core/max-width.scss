@@ -1,10 +1,9 @@
-@use "_variants" as *;
 @use "../helpers" as *;
 
 @mixin max-width($variants...) {
-	@include variants($variants) using ($ctx, $pseudo) {
+	@include variants($variants) using ($v) {
 		@each $key, $n in breakpoints() {
-			#{$ctx}max-w-#{$key}#{$pseudo} {
+			#{variant(max-w-#{$key}, $v)} {
 				max-width: px($n);
 			}
 		}

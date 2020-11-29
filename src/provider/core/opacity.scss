@@ -1,12 +1,10 @@
-@use "_variants" as *;
 @use "../helpers" as *;
 
 @mixin opacity($variants...) {
 	// prettier-ignore
-	@include variants($variants) using ($ctx, $pseudo) {
+	@include variants($variants) using ($v) {
 		@include generate-from-range((
-			ctx: $ctx,
-			pseudo: $pseudo,
+			variant: $v,
 			shorthand: opacity,
 			property: (opacity),
 			range: var-join(

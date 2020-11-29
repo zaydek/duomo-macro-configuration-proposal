@@ -7,23 +7,23 @@
 @use "preflight/vendored-font-smoothing" as *;
 
 @use "core/background-color" as *;
+@use "core/border-radius" as *;
+@use "core/height" as *;
+@use "core/margin" as *;
+@use "core/max-width" as *;
+@use "core/min-height" as *;
+@use "core/opacity" as *;
 @use "core/position" as *;
 @use "core/width" as *;
 // @use "core/aspect-ratio" as *;
-// @use "core/border-radius" as *;
 // @use "core/border-width" as *;
 // @use "core/box-shadow" as *;
 // @use "core/container" as *;
 // @use "core/display" as *;
 // @use "core/grid" as *;
-@use "core/height" as *;
-// @use "core/margin" as *;
 // @use "core/max-width" as *;
-// @use "core/max-width" as *;
-// @use "core/min-height" as *;
-// @use "core/opacity" as *;
 // @use "core/overflow" as *;
-// @use "core/padding" as *;
+@use "core/padding" as *;
 // @use "core/pointer-events" as *;
 // @use "core/position" as *;
 // @use "core/shape" as *;
@@ -39,20 +39,20 @@
 	// @include display(responsive);
 	// @include grid(responsive);
 	// @include position(responsive); // DONE
-	// @include margin(responsive);
-	// @include padding(responsive);
+	// @include margin(responsive); // DONE
+	@include padding(responsive); // DONE
 	// @include width(responsive); // DONE
-	// @include max-width(responsive);
+	// @include max-width(responsive); // DONE
 	// @include container;
-	@include height(responsive); // DONE
-	// @include min-height(responsive);
+	// @include height(responsive); // DONE
+	// @include min-height(responsive); // DONE
 	// @include shape();
 	// @include aspect-ratio;
 	// @include background-color(responsive, hover, group-hover, focus, group-focus); // DONE
 	// @include border-width(responsive);
-	// @include border-radius(responsive);
+	// @include border-radius(responsive); // TODO
 	// @include box-shadow(responsive, hover, group-hover, focus, group-focus);
-	// @include opacity(responsive, hover, group-hover, focus, group-focus);
+	// @include opacity(responsive, hover, group-hover, focus, group-focus); // TODO
 	// @include overflow(responsive);
 	// @include z-index(responsive, hover, group-hover, focus, group-focus);
 	// @include pointer-events(responsive);
