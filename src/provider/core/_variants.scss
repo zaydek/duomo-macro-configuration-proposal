@@ -1,67 +1,54 @@
 @use "sass:list";
+@use "sass:meta";
 
 @use "../helpers" as *;
 
-// @mixin variants($variants) {
-// 	@content (".", "");
-// 	@if list.index($variants, hover) {
-// 		@content (".hover\\:", ":hover");
-// 	}
-// 	@if list.index($variants, "hover") {
-// 		@content (".focus\\:", ":focus");
-// 	}
-// 	@if list.index($variants, "group-hover") {
-// 		@content (".group-hover:hover .group-hover\\:", "");
-// 	}
-// 	@if list.index($variants, "group-focus") {
-// 		@content (".group-focus:focus .group-focus\\:", "");
-// 	}
-// 	@if list.index($variants, "responsive") {
-// 		@each $mk, $mv in (breakpoints()) {
-// 			@media (min-width: #{$mv + px}) {
-// 				@content (".#{$mk}\\:", "");
-// 			}
-// 		}
-// 	}
-// }
+@function no-op($selector) {
+	@return ".#{$selector}";
+}
+@function hover($selector) {
+	@return ".hover\\:#{$selector}:hover";
+}
+@function focus($selector) {
+	@return ".focus\\:#{$selector}:focus";
+}
+@function group-hover($selector) {
+	@return ".group-hover:hover .group-hover\\:#{$selector}";
+}
+@function group-focus($selector) {
+	@return ".group-focus:focus .group-focus\\:#{$selector}";
+}
+@function responsive($selector) {
+	@return "#{&}\\:#{$selector}";
+}
 
 @mixin variants($variants) {
-	@content (
-		".",
-		""
-	);
+	@content (no-op);
 	@if list.index($variants, hover) {
-		@content (
-			".hover\\:",
-			":hover"
-		);
+		@content (hover);
 	}
-	@if list.index($variants, "hover") {
-		@content (
-			".focus\\:",
-			":focus"
-		);
+	@if list.index($variants, focus) {
+		@content (focus);
 	}
-	@if list.index($variants, "group-hover") {
-		@content (
-			".group-hover:hover .group-hover\\:",
-			""
-		);
+	@if list.index($variants, group-hover) {
+		@content (group-hover);
 	}
-	@if list.index($variants, "group-focus") {
-		@content (
-		".group-focus:focus .group-focus\\:",
-			""
-		);
+	@if list.index($variants, group-focus) {
+		@content (group-focus);
 	}
-	@if list.index($variants, "responsive") {
-		@each $mk, $mv in (breakpoints()) {
+	@if list.index($variants, responsive) {
+		@each $mk, $mv in breakpoints() {
 			@media (min-width: #{$mv + px}) {
-				@content (
-					".#{$mk}\\:",
-					""
-				);
+				.#{$mk} {
+					@at-root {
+						@content (responsive);
+					}
+				}
 			}
 		}
 	}
+}
+
+@function variant($selector, $variant-fn) {
+	@return meta.call($variant-fn, $selector);
 }

@@ -14,6 +14,70 @@
   background-color: var(--red-700);
 }
 
+.hover\:red-400:hover {
+  background-color: var(--red-400);
+}
+
+.hover\:red-500:hover {
+  background-color: var(--red-500);
+}
+
+.hover\:red-600:hover {
+  background-color: var(--red-600);
+}
+
+.hover\:red-700:hover {
+  background-color: var(--red-700);
+}
+
+.focus\:red-400:focus {
+  background-color: var(--red-400);
+}
+
+.focus\:red-500:focus {
+  background-color: var(--red-500);
+}
+
+.focus\:red-600:focus {
+  background-color: var(--red-600);
+}
+
+.focus\:red-700:focus {
+  background-color: var(--red-700);
+}
+
+.group-hover:hover .group-hover\:red-400 {
+  background-color: var(--red-400);
+}
+
+.group-hover:hover .group-hover\:red-500 {
+  background-color: var(--red-500);
+}
+
+.group-hover:hover .group-hover\:red-600 {
+  background-color: var(--red-600);
+}
+
+.group-hover:hover .group-hover\:red-700 {
+  background-color: var(--red-700);
+}
+
+.group-focus:focus .group-focus\:red-400 {
+  background-color: var(--red-400);
+}
+
+.group-focus:focus .group-focus\:red-500 {
+  background-color: var(--red-500);
+}
+
+.group-focus:focus .group-focus\:red-600 {
+  background-color: var(--red-600);
+}
+
+.group-focus:focus .group-focus\:red-700 {
+  background-color: var(--red-700);
+}
+
 @media (min-width: 640px) {
   .sm\:red-400 {
     background-color: var(--red-400);
