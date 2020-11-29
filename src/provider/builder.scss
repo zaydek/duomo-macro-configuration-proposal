@@ -1,5 +1,3 @@
-@use "helpers" as *;
-
 @use "configuration";
 
 @use "preflight/modern-normalize" as *;
@@ -30,39 +28,35 @@
 @use "core/width" as *;
 @use "core/z-index" as *;
 
-// @mixin head {
-// 	@include modern-normalize;
-// 	@include tailwind-base;
-// 	@include vendored-font-smoothing;
-// }
-
-@mixin body {
-	// @include group() // DONE;
-	// @include display(responsive); // DONE
-	// @include grid(responsive); // DONE
-	// @include position(responsive); // DONE
-	// @include margin(responsive); // DONE
-	// @include padding(responsive); // DONE
-	// @include width(responsive); // DONE
-	// @include max-width(responsive); // DONE
-	// @include container(); // DONE
-	// @include height(responsive); // DONE
-	// @include min-height(responsive); // DONE
-	// @include shape(); // DONE
-	// @include aspect-ratio; // DONE
-	// @include background-color(responsive, hover, group-hover, focus, group-focus); // DONE
-	// @include border-width(responsive); // TODO
-	// @include border-radius(responsive); // TODO
-	// @include box-shadow(responsive, hover, group-hover, focus, group-focus); // TODO
-	// @include opacity(responsive, hover, group-hover, focus, group-focus); // TODO
-	// @include overflow(responsive); // DONE
-	// @include z-index(responsive, hover, group-hover, focus, group-focus); // TODO
-	// @include pointer-events(responsive); // DONE
-}
-
 @at-root {
+	// TODO: Support `$headless-root` / CSS variables.
 	@if configuration.$headless == false {
-		// @include head;
-		@include body;
+		// Preflight:
+		@include modern-normalize;
+		@include tailwind-base;
+		@include vendored-font-smoothing;
+
+		// Duomo CSS:
+		@include group;
+		@include display(responsive);
+		@include grid(responsive);
+		@include position(responsive);
+		@include margin(responsive);
+		@include padding(responsive);
+		@include width(responsive);
+		@include max-width(responsive);
+		@include container;
+		@include height(responsive);
+		@include min-height(responsive);
+		@include shape(responsive);
+		@include aspect-ratio(/* TODO */);
+		@include background-color(responsive, hover, group-hover, focus, group-focus);
+		@include border-width(responsive);
+		@include border-radius(responsive);
+		@include box-shadow(responsive, hover, group-hover, focus, group-focus);
+		@include opacity(responsive, hover, group-hover, focus, group-focus);
+		@include overflow(responsive);
+		@include z-index(responsive, hover, group-hover, focus, group-focus);
+		@include pointer-events(responsive);
 	}
 }

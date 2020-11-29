@@ -1,18 +1,10 @@
 @use "../helpers" as *;
 
-// position: absolute;
-// @each $prop in (top, right, bottom, left) {
-// 	#{$prop}: 0;
-// }
-// @each $prop in (width, height) {
-// 	#{$prop}: 100%;
-// }
-
 // NOTE: Does not support `$variants` because of `[style]` selector.
 @mixin aspect-ratio {
-	// NOTE: Use parens so `16 / 9` works.
 	[style*="--aspect-ratio"] {
 		position: relative;
+		// NOTE: Use parens so `--aspect-ratio: 16 / 9` works.
 		padding-bottom: calc(100% / (var(--aspect-ratio)));
 	}
 	[style*="--aspect-ratio"] > * {
