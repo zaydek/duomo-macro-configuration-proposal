@@ -1,10 +1,9 @@
 @use "../helpers/getters" as *;
 
-// NOTE: Changed:
-//
-// - L119
-// - L150
-// - L211
+// var(--reset-font, font(sans))
+// var(--reset-border-color, color(gray-200))
+// var(--reset-placeholder-color, color(gray-400))
+// var(--reset-mono, font(mono))
 
 // https://github.com/tailwindlabs/tailwindcss/blob/master/src/plugins/css/preflight.css
 //
@@ -214,7 +213,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: font(mono);
+  font-family: var(--reset-mono, font(mono));
 }
 
 /**
