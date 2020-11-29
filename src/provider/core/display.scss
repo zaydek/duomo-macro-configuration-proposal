@@ -1,13 +1,12 @@
-@use "_variants" as *;
 @use "../helpers" as *;
 
-// TODO: Rename values.
+// TODO
 @mixin display($variants...) {
-	@include variants($variants) using ($ctx, $pseudo) {
-		#{$ctx}invisible#{$pseudo} {
+	@include variants($variants) using ($v) {
+		#{variant(invisible, $v)} {
 			display: none;
 		}
-		#{$ctx}visible#{$pseudo} {
+		#{variant(visible, $v)} {
 			display: block;
 		}
 	}
