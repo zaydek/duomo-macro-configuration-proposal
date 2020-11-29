@@ -59,10 +59,20 @@
 	@return configuration.$range;
 }
 
+// Ex: shadows() -> (sm: TODO, md: TODO, ...)
+@function shadows() {
+	$map: ();
+	@each $mk, $mv in configuration.$shadow-map {
+		$map: map.set($map, $mk, $mv);
+	}
+	@return $map;
+}
+
 // Ex:
 //
 // breakpoint(xs) -> 512
 // breakpoint(sm) -> 640
+//
 @function breakpoint($key) {
 	$got: map.get(configuration.$breakpoint-map, $key);
 	@if not $got {

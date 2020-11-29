@@ -1,6 +1,14 @@
-@use "_variants" as *;
 @use "../helpers" as *;
 
+// position: absolute;
+// @each $prop in (top, right, bottom, left) {
+// 	#{$prop}: 0;
+// }
+// @each $prop in (width, height) {
+// 	#{$prop}: 100%;
+// }
+
+// NOTE: Does not support `$variants` because of `[style]` selector.
 @mixin aspect-ratio {
 	// NOTE: Use parens so `16 / 9` works.
 	[style*="--aspect-ratio"] {
@@ -9,11 +17,11 @@
 	}
 	[style*="--aspect-ratio"] > * {
 		position: absolute;
-		@each $prop in (top, right, bottom, left) {
-			#{$prop}: 0;
-		}
-		@each $prop in (width, height) {
-			#{$prop}: 100%;
-		}
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
 }

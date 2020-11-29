@@ -1,31 +1,11 @@
-@use "_variants" as *;
 @use "../helpers" as *;
 
 @mixin box-shadow($variants...) {
-	@include variants($variants) using ($ctx, $pseudo) {
-		#{$ctx}shadow-none#{$pseudo} {
-			box-shadow: none;
-		}
-		#{$ctx}shadow-inner#{$pseudo} {
-			box-shadow: var(--shadow-inner);
-		}
-		#{$ctx}shadow-xs#{$pseudo} {
-			box-shadow: var(--shadow-xs);
-		}
-		#{$ctx}shadow-sm#{$pseudo} {
-			box-shadow: var(--shadow-sm);
-		}
-		#{$ctx}shadow-md#{$pseudo} {
-			box-shadow: var(--shadow-md);
-		}
-		#{$ctx}shadow-lg#{$pseudo} {
-			box-shadow: var(--shadow-lg);
-		}
-		#{$ctx}shadow-xl#{$pseudo} {
-			box-shadow: var(--shadow-xl);
-		}
-		#{$ctx}shadow-2xl#{$pseudo} {
-			box-shadow: var(--shadow-2xl);
+	@include variants($variants) using ($v) {
+		@each $mk, $mv in shadows() {
+			#{variant(shadow-#{$mk}, $v)} {
+				box-shadow: var(--shadow-#{$mk});
+			}
 		}
 	}
 }
