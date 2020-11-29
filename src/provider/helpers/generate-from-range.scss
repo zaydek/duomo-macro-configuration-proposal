@@ -4,6 +4,7 @@
 @use "abs" as *;
 @use "getters" as *;
 @use "resolvers" as *;
+@use "variant" as *;
 
 // Ex:
 //
@@ -22,8 +23,7 @@
 
 // prettier-ignore
 @mixin generate-from-range($info-map) {
-	$ctx:       map.get($info-map, ctx);
-	$pseudo:    map.get($info-map, pseudo);
+	$variant:   map.get($info-map, variant);
 	$shorthand: map.get($info-map, shorthand);
 	$property:  map.get($info-map, property);
 	$range:     map.get($info-map, range);
@@ -33,7 +33,7 @@
 	$as-percent: percent-heuristic($range);
 
 	@each $rv in $range {
-		#{$ctx}#{n($rv)}#{$shorthand}-#{desc(abs($rv), $as-percent)}#{$pseudo} {
+		#{variant(#{n($rv)}#{$shorthand}-#{desc(abs($rv), $as-percent)}, $variant)} {
 			@each $prop in $property {
 				#{$prop}: resolve($rv, $resolver);
 			}

@@ -6,8 +6,10 @@
 @use "preflight/tailwind-base" as *;
 @use "preflight/vendored-font-smoothing" as *;
 
-// @use "core/aspect-ratio" as *;
 @use "core/background-color" as *;
+@use "core/position" as *;
+
+// @use "core/aspect-ratio" as *;
 // @use "core/border-radius" as *;
 // @use "core/border-width" as *;
 // @use "core/box-shadow" as *;
@@ -58,6 +60,7 @@
 
 @at-root {
 	@if configuration.$headless == false {
+		@include position(hover);
 		@include background-color(responsive, hover, group-hover, focus, group-focus);
 
 		// @include head;
